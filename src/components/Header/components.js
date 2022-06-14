@@ -7,7 +7,7 @@ export const Header = styled.div`
   opacity: 1;
 
   width: 100%;
-  height: 120px;
+  min-height: 10%;
 
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
 

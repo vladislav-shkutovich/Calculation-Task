@@ -1,15 +1,17 @@
 import React from 'react'
 
+import { Home } from './components'
+
 import Display from './Display'
 import History from './History'
 import Keypad from './Keypad'
 
 export default () => {
   return (
-    <React.Fragment>
+    <Home>
       <Display />
-      <History />
       <Keypad />
-    </React.Fragment>
+      <History />
+    </Home>
   )
 }
