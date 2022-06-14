@@ -1,15 +1,18 @@
 import React from 'react'
 
 import theme from '@/theme'
-import { Header, Heading } from './components'
-import Button from './Button'
+import { Card, Heading, Anchor } from './components'
+import {
+  HOME_PAGE_ROUTE,
+  SETTINGS_PAGE_ROUTE,
+} from '@/constants'
 
 export default () => {
   return (
-    <Header color={theme.colors.primary}>
+    <Card color={theme.colors.primary}>
       <Heading>Calculator App</Heading>
-      <Button name="Home" />
-      <Button name="Settings" />
-    </Header>
+      <Anchor href={HOME_PAGE_ROUTE}>Home</Anchor>
+      <Anchor href={SETTINGS_PAGE_ROUTE}>Settings</Anchor>
+    </Card>
   )
 }

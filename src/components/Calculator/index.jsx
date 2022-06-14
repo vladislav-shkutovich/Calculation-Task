@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Home } from './components'
+import { Card } from './components'
 
 import Display from './Display'
 import History from './History'
@@ -8,10 +8,10 @@ import Keypad from './Keypad'
 
 export default () => {
   return (
-    <Home>
+    <Card>
       <Display />
       <Keypad />
       <History />
-    </Home>
+    </Card>
   )
 }

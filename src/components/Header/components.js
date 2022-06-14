@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Header = styled.div`
+export const Card = styled.div`
   background: #434343 0% 0% no-repeat padding-box;
   border: 1px solid ${({ theme }) => theme.colors.black};
   border-radius: 3px;
@@ -22,10 +22,10 @@ export const Heading = styled.p`
   margin-right: auto;
 `
 
-export const Button = styled.button`
+export const Anchor = styled.a`
   background: none;
   border: none;
-  text-decoration: underline;
+  text-decoration: none;
 
   margin-right: 20px;
 

@@ -1,0 +1,51 @@
+import styled from 'styled-components'
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px 50px;
+
+  max-width: 40%;
+  max-height: 50%;
+
+  & * {
+    padding: 10px;
+    max-width: 220px;
+    text-align: left;
+    border-radius: 5px;
+  }
+`
+export const Heading = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes[5]}px;
+`
+export const Description = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes[2]}px;
+  padding: 5px;
+`
+
+export const ThemeSelector = styled.select`
+  height: 50px;
+  font-size: ${({ theme }) => theme.fontSizes[2]}px;
+  border: 2px solid
+    ${({ theme }) => theme.colors.secondaryLight};
+
+  margin-top: 5px;
+`
+
+export const HistoryCleaner = styled.button`
+  margin-top: 15px;
+  font-size: ${({ theme }) => theme.fontSizes[2]}px;
+
+  border: 2px solid
+    ${({ theme }) => theme.colors.secondaryLight};
+
+  & :hover {
+    opacity: 80%;
+    transform: translateY(1px);
+  }
+
+  & :active {
+    transform: translateY(-1px);
+  }
+`
