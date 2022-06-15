@@ -25,7 +25,7 @@ export const Display = styled.div`
   justify-items: end;
   align-items: center;
 
-  font-size: ${({ theme }) => theme.fontSizes[5]}px;
+  font-size: ${({ theme }) => theme.fontSizes[4]}px;
 `
 
 export const Keypad = styled.div`
