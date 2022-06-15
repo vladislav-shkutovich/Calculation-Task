@@ -14,13 +14,13 @@ import theme from '@/theme'
 import GlobalStyles from '@/globalStyles'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Application />
-        <GlobalStyles />
-      </BrowserRouter>
-    </ThemeProvider>
-  </Provider>,
-  document.getElementById('root'),
+	<Provider store={store}>
+		<ThemeProvider theme={theme}>
+			<BrowserRouter>
+				<Application />
+				<GlobalStyles />
+			</BrowserRouter>
+		</ThemeProvider>
+	</Provider>,
+	document.getElementById('root'),
 )

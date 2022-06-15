@@ -7,7 +7,7 @@ import { Keypad } from './components'
 import DigitButton from './DigitButton'
 import OperationButton from './OperationButton'
 
-// ! Keypad component
+// * Keypad component
 export default ({ dispatch }) => {
 	return (
 		<Keypad>
