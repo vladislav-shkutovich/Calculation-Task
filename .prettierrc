@@ -5,5 +5,7 @@
   "singleQuote": true,
   "trailingComma": "all",
   "parser": "babel",
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "useTabs": true
+
 }
