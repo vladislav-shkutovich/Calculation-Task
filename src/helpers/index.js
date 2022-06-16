@@ -1,12 +1,26 @@
 // @todo: add some helpers
 
 import { ACTIONS } from '@/constants'
+import { evaluate as mathEvaluate } from 'mathjs'
 
+// ! fix: brackets not working with this logic
 function evaluate({
 	currentOperand,
 	previousOperand,
 	operation,
 }) {
+	// case including brackets
+	// TODO доработать логику вычисления со скобками
+	if (previousOperand.includes('('))
+		return mathEvaluate(
+			(previousOperand || '') +
+				(operation || '') +
+				(currentOperand || ''),
+		)
+
+	console.log(previousOperand + operation + currentOperand)
+
+	// case without brackets
 	const prev = parseFloat(previousOperand)
 	const cur = parseFloat(currentOperand)
 
@@ -29,7 +43,9 @@ function evaluate({
 			break
 	}
 
-	return computation.toString()
+	return Number.isInteger(computation)
+		? computation.toString()
+		: computation.toFixed(3).toString()
 }
 
 export function reducer(state, { type, payload }) {
@@ -62,7 +78,6 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.CHOOSE_OPERATION:
-			// for the
 			if (
 				state.currentOperand == null &&
 				state.previousOperand == null
