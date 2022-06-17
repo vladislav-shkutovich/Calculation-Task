@@ -3,49 +3,26 @@
 import { ACTIONS } from '@/constants'
 import { evaluate as mathEvaluate } from 'mathjs'
 
-// ! fix: brackets not working with this logic
 function evaluate({
 	currentOperand,
 	previousOperand,
 	operation,
 }) {
-	// case including brackets
-	// TODO доработать логику вычисления со скобками
-	if (previousOperand.includes('('))
-		return mathEvaluate(
-			(previousOperand || '') +
-				(operation || '') +
-				(currentOperand || ''),
-		)
+	try {
+		const calculation =
+			previousOperand + operation + currentOperand
+		console.log(calculation)
 
-	console.log(previousOperand + operation + currentOperand)
+		const result = mathEvaluate(calculation)
 
-	// case without brackets
-	const prev = parseFloat(previousOperand)
-	const cur = parseFloat(currentOperand)
+		const formattedResult = Number.isInteger(result)
+			? result.toString()
+			: result.toFixed(3).toString()
 
-	if (isNaN(prev) || isNaN(cur)) return ''
-
-	let computation = ''
-
-	switch (operation) {
-		case '+':
-			computation = prev + cur
-			break
-		case '-':
-			computation = prev - cur
-			break
-		case '*':
-			computation = prev * cur
-			break
-		case '/':
-			computation = prev / cur
-			break
+		return formattedResult
+	} catch {
+		return 'Error'
 	}
-
-	return Number.isInteger(computation)
-		? computation.toString()
-		: computation.toFixed(3).toString()
 }
 
 export function reducer(state, { type, payload }) {
@@ -101,7 +78,10 @@ export function reducer(state, { type, payload }) {
 
 			return {
 				...state,
-				previousOperand: evaluate(state),
+				previousOperand:
+					state.previousOperand +
+					state.operation +
+					state.currentOperand,
 				operation: payload.operation,
 				currentOperand: null,
 			}

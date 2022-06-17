@@ -8,7 +8,8 @@ export default ({ userInputs }) => {
 	//   console.log(userInputs)
 	return (
 		<Display>
-			{userInputs.previousOperand} {userInputs.operation}{' '}
+			{userInputs.previousOperand}
+			{userInputs.operation}
 			{userInputs.currentOperand}
 		</Display>
 	)
