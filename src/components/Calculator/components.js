@@ -6,7 +6,7 @@ export const Card = styled.div`
 	grid-template-columns: 3fr 1fr;
 
 	width: 100%;
-	max-height: 90%;
+	height: 90%;
 
 	& * {
 		padding: 10px;
@@ -67,7 +67,7 @@ export const KeypadButton = styled.div`
 export const History = styled.div`
 	display: grid;
 	grid-area: 1 / 2 / 3 / 3;
-	align-items: flex-start;
+	align-content: flex-start;
 
 	margin: 20px 20px 20px 5px;
 
@@ -86,12 +86,14 @@ export const History = styled.div`
 
 		& ::-webkit-scrollbar {
 			width: 4px;
+			height: 4px;
 			background-color: #f9f9fd;
 		}
 
 		& ::-webkit-scrollbar-thumb {
 			border-radius: 3px;
-			background-color: #223c50;
+			background-color: ${({ theme }) =>
+				theme.colors.secondaryLight};
 		}
 	}
 `

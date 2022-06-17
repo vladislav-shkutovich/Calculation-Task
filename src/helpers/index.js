@@ -1,5 +1,5 @@
 import { ACTIONS } from '@/constants'
-import evaluate from '@/actions'
+import { evaluate } from '@/actions'
 
 export function reducer(state, { type, payload }) {
 	switch (type) {
@@ -80,7 +80,13 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.CLEAR:
-			return {}
+			return {
+				...state,
+				overwrite: true,
+				previousOperand: null,
+				operation: null,
+				currentOperand: null,
+			}
 
 		case ACTIONS.EVALUATE:
 			if (
@@ -96,7 +102,8 @@ export function reducer(state, { type, payload }) {
 				overwrite: true,
 				previousOperand: null,
 				operation: null,
-				currentOperand: evaluate(state),
+				currentOperand: evaluate(state).formattedResult,
+				history: evaluate(state).updatedHistory,
 			}
 	}
 }

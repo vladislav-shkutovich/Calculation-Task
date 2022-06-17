@@ -1,24 +1,30 @@
 import { evaluate as mathjsEvaluate } from 'mathjs'
 
-export default function evaluate({
+export function evaluate({
 	currentOperand,
 	previousOperand,
 	operation,
+	history,
 }) {
+	const calculation =
+		previousOperand + operation + currentOperand
+
+	// Guard for case when history array is empty
+	const updatedHistory =
+		history === undefined ? [] : [...history]
+
+	let formattedResult = 'Invalid expression'
+
 	try {
-		const calculation =
-			previousOperand + operation + currentOperand
-		console.log(calculation)
-
 		const result = mathjsEvaluate(calculation)
-		// todo PLACEHOLDER FOR DISPATCH TO HISTORY
+		updatedHistory.push(calculation)
 
-		const formattedResult = Number.isInteger(result)
+		formattedResult = Number.isInteger(result)
 			? result.toString()
 			: result.toFixed(3).toString()
 
-		return formattedResult
+		return { formattedResult, updatedHistory }
 	} catch {
-		return 'Error'
+		return { formattedResult, updatedHistory }
 	}
 }

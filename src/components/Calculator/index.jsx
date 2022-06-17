@@ -14,7 +14,7 @@ import { reducer } from '@/helpers'
 // * Main Calculator component
 export default () => {
 	const [
-		{ currentOperand, previousOperand, operation },
+		{ currentOperand, previousOperand, operation, history },
 		dispatch,
 	] = useReducer(reducer, {})
 
@@ -30,7 +30,7 @@ export default () => {
 
 			<Keypad dispatch={dispatch} />
 
-			<History />
+			<History history={history} />
 		</Card>
 	)
 }
