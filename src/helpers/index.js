@@ -1,34 +1,9 @@
-// @todo: add some helpers
-
 import { ACTIONS } from '@/constants'
-import { evaluate as mathEvaluate } from 'mathjs'
-
-function evaluate({
-	currentOperand,
-	previousOperand,
-	operation,
-}) {
-	try {
-		const calculation =
-			previousOperand + operation + currentOperand
-		console.log(calculation)
-
-		const result = mathEvaluate(calculation)
-
-		const formattedResult = Number.isInteger(result)
-			? result.toString()
-			: result.toFixed(3).toString()
-
-		return formattedResult
-	} catch {
-		return 'Error'
-	}
-}
+import evaluate from '@/actions'
 
 export function reducer(state, { type, payload }) {
 	switch (type) {
 		case ACTIONS.ADD_DIGIT:
-			// Validation guards
 			if (state.overwrite === true) {
 				return {
 					...state,
