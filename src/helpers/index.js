@@ -105,5 +105,11 @@ export function reducer(state, { type, payload }) {
 				currentOperand: evaluate(state).formattedResult,
 				history: evaluate(state).updatedHistory,
 			}
+
+		case ACTIONS.CLEAR_HISTORY:
+			return {
+				...state,
+				history: [],
+			}
 	}
 }

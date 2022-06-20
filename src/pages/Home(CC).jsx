@@ -3,14 +3,14 @@ import React from 'react'
 import { PageLayout, Card } from '@/layouts'
 
 import Header from '@/components/Header'
-import Settings from '@/components/Settings'
+import CalculatorCC from '@/components/CalculatorСС'
 
-export default ({ dispatch }) => {
+export default ({ state, dispatch }) => {
 	return (
 		<PageLayout>
 			<Card>
 				<Header />
-				<Settings dispatch={dispatch} />
+				<CalculatorCC state={state} dispatch={dispatch} />
 			</Card>
 		</PageLayout>
 	)

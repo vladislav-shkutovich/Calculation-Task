@@ -6,4 +6,5 @@ export const ACTIONS = {
 	CLEAR: 'clear',
 	DELETE_DIGIT: 'delete-digit',
 	EVALUATE: 'evaluate',
+	CLEAR_HISTORY: 'clear-history',
 }

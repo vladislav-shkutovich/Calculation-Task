@@ -41,7 +41,7 @@ export const Keypad = styled.div`
 	margin: 5px 5px 20px 20px;
 `
 
-export const KeypadButton = styled.div`
+export const KeypadButton = styled.button`
 	display: grid;
 	justify-items: center;
 	align-items: center;
