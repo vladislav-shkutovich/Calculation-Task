@@ -10,7 +10,7 @@ export default ({ dispatch }) => {
 		<Card>
 			<Heading>Settings</Heading>
 			<Description>Switch Theme</Description>
-			<ThemeSelector />
+			<ThemeSelector dispatch={dispatch} />
 			<HistoryCleaner dispatch={dispatch} />
 		</Card>
 	)

@@ -7,4 +7,5 @@ export const ACTIONS = {
 	DELETE_DIGIT: 'delete-digit',
 	EVALUATE: 'evaluate',
 	CLEAR_HISTORY: 'clear-history',
+	SELECT_THEME: 'select-theme',
 }

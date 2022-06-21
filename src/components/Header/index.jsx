@@ -1,6 +1,6 @@
 import React from 'react'
 
-import theme from '@/theme'
+import theme from '@/themes/themeColored'
 import { Card, Heading, Anchor } from './components'
 import {
 	HOME_PAGE_FC_ROUTE,

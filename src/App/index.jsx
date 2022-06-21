@@ -23,8 +23,12 @@ import { reducer } from '@/reducers'
 
 // Styling
 import { ThemeProvider } from 'styled-components'
-import theme from '@/theme'
 import GlobalStyles from '@/globalStyles'
+
+// Themes
+import themeLight from '@/themes/themeLight'
+import themeColored from '@/themes/themeColored'
+import themeDark from '@/themes/themeDark'
 
 // Pages
 const HomePageFC = lazy(() =>
@@ -41,12 +45,25 @@ const SettingsPage = lazy(() =>
 
 export default () => {
 	const [
-		{ currentOperand, previousOperand, operation, history },
+		{
+			currentOperand,
+			previousOperand,
+			operation,
+			history,
+			selectedTheme = 'light',
+		},
 		dispatch,
 	] = useReducer(reducer, {})
 
+	const currentTheme =
+		selectedTheme === 'light'
+			? themeLight
+			: selectedTheme === 'colored'
+			? themeColored
+			: themeDark
+
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider theme={currentTheme}>
 			<BrowserRouter>
 				<Suspense fallback={<Loader />}>
 					<Switch>

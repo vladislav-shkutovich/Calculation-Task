@@ -111,5 +111,12 @@ export function reducer(state, { type, payload }) {
 				...state,
 				history: [],
 			}
+
+		case ACTIONS.SELECT_THEME:
+			console.log(state)
+			return {
+				...state,
+				selectedTheme: payload,
+			}
 	}
 }
