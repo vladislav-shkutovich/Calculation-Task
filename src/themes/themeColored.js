@@ -3,12 +3,14 @@ import { css } from 'styled-components'
 const font = 'sans-serif'
 
 // Color palette
-const black = '#c06c84'
-const white = '#c06c84'
-const error = '#c06c84'
-const primary = '#c06c84'
-const secondary = '#c06c84'
-const secondaryLight = '#c06c84'
+
+const black = '#000000'
+const white = '#ffffff'
+const error = '#bd3636'
+const primary = '#ff8400'
+const secondary = '#ffaa4f'
+const secondaryLight = '#ffc78b'
+const background = '#ffdfbd'
 
 const boxShadows = [
 	'box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.75)',
@@ -53,5 +55,6 @@ export default {
 		black,
 		white,
 		error,
+		background,
 	},
 }

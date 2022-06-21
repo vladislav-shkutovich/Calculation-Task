@@ -1,6 +1,6 @@
 import React from 'react'
 
-import theme from '@/themes/themeColored'
+import theme from '@/themes/themeDark'
 
 import { Loader } from './components'
 
@@ -10,7 +10,7 @@ export default () => {
 	return (
 		<Loader
 			type="Bars"
-			color={theme.colors.secondary}
+			color={theme.colors.black}
 			height={LOADER_SIZE}
 			width={LOADER_SIZE}
 		/>

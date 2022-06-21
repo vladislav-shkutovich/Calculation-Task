@@ -50,7 +50,7 @@ export default () => {
 			previousOperand,
 			operation,
 			history,
-			selectedTheme = 'light',
+			selectedTheme = 'dark',
 		},
 		dispatch,
 	] = useReducer(reducer, {})

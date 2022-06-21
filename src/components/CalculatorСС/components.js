@@ -8,6 +8,10 @@ export const Card = styled.div`
 	width: 100%;
 	height: 90%;
 
+	border: 2px solid ${({ theme }) => theme.colors.black};
+	background-color: ${({ theme }) =>
+		theme.colors.background};
+
 	& * {
 		padding: 10px;
 	}
@@ -19,14 +23,15 @@ export const Display = styled.div`
 
 	margin: 20px 5px 5px 20px;
 
+	color: ${({ theme }) => theme.colors.black};
 	border-bottom: 2px solid
-		${({ theme }) => theme.colors.secondaryLight};
+		${({ theme }) => theme.colors.black};
 
 	justify-items: end;
 	align-items: center;
 	letter-spacing: 2px;
 
-	font-size: ${({ theme }) => theme.fontSizes[4]}px;
+	font-size: ${({ theme }) => theme.fontSizes[5]}px;
 `
 
 export const Keypad = styled.div`
@@ -48,9 +53,14 @@ export const KeypadButton = styled.button`
 
 	width: 60%;
 	height: 60%;
-	border: 2px solid
-		${({ theme }) => theme.colors.secondaryLight};
-	border-radius: 25%;
+	border: 2px solid ${({ theme }) => theme.colors.black};
+	border-radius: 10%;
+	color: ${({ theme }) => theme.colors.black};
+	background: linear-gradient(
+		to bottom,
+		${({ theme }) => theme.colors.background},
+		${({ theme }) => theme.colors.secondaryLight}
+	);
 
 	font-size: ${({ theme }) => theme.fontSizes[5]}px;
 
@@ -68,11 +78,12 @@ export const History = styled.div`
 	display: grid;
 	grid-area: 1 / 2 / 3 / 3;
 	align-content: flex-start;
-
 	margin: 20px 20px 20px 5px;
 
+	color: ${({ theme }) => theme.colors.black};
+
 	border-left: 2px solid
-		${({ theme }) => theme.colors.secondaryLight};
+		${({ theme }) => theme.colors.black};
 
 	& > p {
 		font-size: ${({ theme }) => theme.fontSizes[3]}px;
@@ -84,6 +95,8 @@ export const History = styled.div`
 		list-style-type: none;
 		overflow: auto;
 
+		font-size: ${({ theme }) => theme.fontSizes[2]}px;
+
 		& ::-webkit-scrollbar {
 			width: 4px;
 			height: 4px;
@@ -93,7 +106,7 @@ export const History = styled.div`
 		& ::-webkit-scrollbar-thumb {
 			border-radius: 3px;
 			background-color: ${({ theme }) =>
-				theme.colors.secondaryLight};
+				theme.colors.primary};
 		}
 	}
 `

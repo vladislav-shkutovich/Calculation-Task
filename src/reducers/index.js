@@ -113,7 +113,6 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.SELECT_THEME:
-			console.log(state)
 			return {
 				...state,
 				selectedTheme: payload,

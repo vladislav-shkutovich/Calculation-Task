@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-	background: #434343 0% 0% no-repeat padding-box;
-	border: 1px solid ${({ theme }) => theme.colors.black};
-	border-radius: 3px;
+	background: ${({ theme }) => theme.colors.primary} 0% 0%
+		no-repeat padding-box;
+	border: 2px solid ${({ theme }) => theme.colors.black};
+	border-bottom: none;
 	opacity: 1;
 
 	width: 100%;
 	min-height: 10%;
 
-	font-size: ${({ theme }) => theme.fontSizes[3]}px;
+	font-size: ${({ theme }) => theme.fontSizes[4]}px;
 
 	display: flex;
 	justify-content: space-between;
@@ -17,7 +18,7 @@ export const Card = styled.div`
 `
 
 export const Heading = styled.p`
-	color: ${({ theme }) => theme.colors.white};
+	color: ${({ theme }) => theme.colors.black};
 	margin-left: 20px;
 	margin-right: auto;
 `
@@ -32,10 +33,11 @@ export const Anchor = styled.div`
 
 		font-size: ${({ theme }) => theme.fontSizes[3]}px;
 
-		color: ${({ theme }) => theme.colors.white};
+		color: ${({ theme }) => theme.colors.black};
 
 		& :hover {
-			color: ${({ theme }) => theme.colors.secondaryLight};
+			text-decoration: underline;
+			opacity: 80%;
 		}
 	}
 `

@@ -6,7 +6,6 @@ import { ACTIONS } from '@/constants'
 
 export default ({ dispatch }) => {
 	const selectTheme = event => {
-		console.log(event.target.value)
 		dispatch({
 			type: ACTIONS.SELECT_THEME,
 			payload: event.target.value,
@@ -15,7 +14,7 @@ export default ({ dispatch }) => {
 
 	return (
 		<ThemeSelector
-			defaultValue="light"
+			defaultValue="dark"
 			onChange={selectTheme}>
 			<option value="light">Light Theme</option>
 			<option value="colored">Colored Theme</option>
