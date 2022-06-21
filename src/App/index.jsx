@@ -1,6 +1,6 @@
 import React, { useReducer, lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { reducer } from '@/helpers'
+import { reducer } from '@/reducers'
 
 import {
 	HOME_PAGE_FC_ROUTE,
