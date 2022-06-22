@@ -16,7 +16,7 @@ export default ({ state, dispatch }) => {
 
 			<Keypad dispatch={dispatch} />
 
-			<History state={state} />
+			<History history={state?.history} />
 		</Card>
 	)
 }

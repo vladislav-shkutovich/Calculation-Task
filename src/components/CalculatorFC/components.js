@@ -47,9 +47,9 @@ export const Keypad = styled.div`
 `
 
 export const KeypadButton = styled.button`
-	display: grid;
+	/* display: grid;
 	justify-items: center;
-	align-items: center;
+	align-items: center; */
 
 	width: 60%;
 	height: 60%;
@@ -63,6 +63,23 @@ export const KeypadButton = styled.button`
 	);
 
 	font-size: ${({ theme }) => theme.fontSizes[5]}px;
+
+	& :hover {
+		opacity: 80%;
+		transform: translateY(1px);
+	}
+
+	& :active {
+		transform: translateY(-1px);
+	}
+`
+
+export const ShowMoreButton = styled.button`
+	border: none;
+	background: none;
+	color: ${({ theme }) => theme.colors.black};
+
+	font-size: ${({ theme }) => theme.fontSizes[2]}px;
 
 	& :hover {
 		opacity: 80%;
@@ -104,9 +121,18 @@ export const History = styled.div`
 		}
 
 		& ::-webkit-scrollbar-thumb {
-			border-radius: 3px;
+			border-radius: 5px;
 			background-color: ${({ theme }) =>
-				theme.colors.primary};
+				theme.colors.black};
+		}
+
+		& ::-webkit-scrollbar-track {
+			background-color: ${({ theme }) =>
+				theme.colors.secondaryLight};
+		}
+
+		& > li {
+			margin-bottom: 20px;
 		}
 	}
 `
