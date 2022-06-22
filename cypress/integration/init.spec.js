@@ -1,19 +1,19 @@
 it('visits the app', () => {
-  cy.visit('/')
+	cy.visit('/')
 })
 
 describe('Home page', () => {
-  beforeEach(() => {
-    cy.visit('/')
-  })
+	beforeEach(() => {
+		cy.visit('/')
+	})
 
-  it('it check loader', () => {
-    cy.get('svg').should('be.visible')
-  })
+	it('it check loader', () => {
+		cy.get('svg').should('be.visible')
+	})
 
-  it('it check welcome title', () => {
-    cy.get('#welcome')
-      .should('be.visible')
-      .contains('Welcome!')
-  })
+	it('it check welcome title', () => {
+		cy.get('#welcome')
+			.should('be.visible')
+			.contains('Welcome!')
+	})
 })

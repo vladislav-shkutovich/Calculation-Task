@@ -1,13 +1,10 @@
 import React from 'react'
 
-// Styling
 import { Keypad } from './components'
 
-// Components
 import DigitButton from './DigitButton'
 import OperationButton from './OperationButton'
 
-// * Keypad component
 export default ({ dispatch }) => {
 	return (
 		<Keypad>

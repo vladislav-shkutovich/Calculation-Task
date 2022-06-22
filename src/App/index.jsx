@@ -1,4 +1,3 @@
-// React
 import React, { useReducer, lazy, Suspense } from 'react'
 
 // Components

@@ -47,10 +47,6 @@ export const Keypad = styled.div`
 `
 
 export const KeypadButton = styled.button`
-	/* display: grid;
-	justify-items: center;
-	align-items: center; */
-
 	width: 60%;
 	height: 60%;
 	border: 2px solid ${({ theme }) => theme.colors.black};

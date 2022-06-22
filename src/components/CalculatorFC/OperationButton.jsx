@@ -1,12 +1,9 @@
 import React from 'react'
 
-// Styling
 import { KeypadButton } from './components'
 
-// Actions
 import { ACTIONS } from '@/constants'
 
-// * OperationButton component
 export default ({ dispatch, operation }) => {
 	let currentOperation
 
