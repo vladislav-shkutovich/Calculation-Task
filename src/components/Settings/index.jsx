@@ -3,7 +3,7 @@ import React from 'react'
 import { Card, Heading, Description } from './components'
 
 import ThemeSelector from './ThemeSelector'
-import HistoryCleaner from './HistoryCleaner'
+import CleanerButton from './CleanerButton'
 
 export default ({ selectedTheme, dispatch }) => {
 	return (
@@ -14,7 +14,16 @@ export default ({ selectedTheme, dispatch }) => {
 				selectedTheme={selectedTheme}
 				dispatch={dispatch}
 			/>
-			<HistoryCleaner dispatch={dispatch} />
+			<CleanerButton
+				type="CLEAR_HISTORY"
+				name="Clear History"
+				dispatch={dispatch}
+			/>
+			<CleanerButton
+				type="CLEAR_HISTORY_AND_RESULT"
+				name="Clear History & Result"
+				dispatch={dispatch}
+			/>
 		</Card>
 	)
 }

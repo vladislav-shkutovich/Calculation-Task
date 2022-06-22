@@ -50,7 +50,7 @@ export const ThemeSelector = styled.select`
 	}
 `
 
-export const HistoryCleaner = styled.button`
+export const CleanerButton = styled.button`
 	margin-top: 15px;
 	font-size: ${({ theme }) => theme.fontSizes[2]}px;
 

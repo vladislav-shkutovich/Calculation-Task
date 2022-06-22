@@ -112,6 +112,16 @@ export function reducer(state, { type, payload }) {
 				history: [],
 			}
 
+		case ACTIONS.CLEAR_HISTORY_AND_RESULT:
+			return {
+				...state,
+				overwrite: true,
+				previousOperand: null,
+				operation: null,
+				currentOperand: null,
+				history: [],
+			}
+
 		case ACTIONS.SELECT_THEME:
 			return {
 				...state,
