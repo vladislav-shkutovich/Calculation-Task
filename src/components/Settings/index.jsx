@@ -5,12 +5,15 @@ import { Card, Heading, Description } from './components'
 import ThemeSelector from './ThemeSelector'
 import HistoryCleaner from './HistoryCleaner'
 
-export default ({ dispatch }) => {
+export default ({ selectedTheme, dispatch }) => {
 	return (
 		<Card>
 			<Heading>Settings</Heading>
 			<Description>Switch Theme</Description>
-			<ThemeSelector dispatch={dispatch} />
+			<ThemeSelector
+				selectedTheme={selectedTheme}
+				dispatch={dispatch}
+			/>
 			<HistoryCleaner dispatch={dispatch} />
 		</Card>
 	)

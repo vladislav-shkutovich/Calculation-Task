@@ -5,12 +5,15 @@ import { PageLayout, Card } from '@/layouts'
 import Header from '@/components/Header'
 import Settings from '@/components/Settings'
 
-export default ({ dispatch }) => {
+export default ({ selectedTheme, dispatch }) => {
 	return (
 		<PageLayout>
 			<Card>
 				<Header />
-				<Settings dispatch={dispatch} />
+				<Settings
+					selectedTheme={selectedTheme}
+					dispatch={dispatch}
+				/>
 			</Card>
 		</PageLayout>
 	)

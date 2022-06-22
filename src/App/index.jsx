@@ -100,7 +100,10 @@ export default () => {
 						<Route
 							path={SETTINGS_PAGE_ROUTE}
 							render={() => (
-								<SettingsPage dispatch={dispatch} />
+								<SettingsPage
+									selectedTheme={selectedTheme}
+									dispatch={dispatch}
+								/>
 							)}
 						/>
 						<Redirect to={HOME_PAGE_FC_ROUTE} />
