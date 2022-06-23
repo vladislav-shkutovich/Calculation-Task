@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-	background: ${({ theme }) => theme.colors.primary} 0% 0%
-		no-repeat padding-box;
+	background: linear-gradient(
+		to top,
+		${({ theme }) => theme.colors.primary},
+		${({ theme }) => theme.colors.secondary}
+	);
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	border-bottom: none;
 	opacity: 1;
