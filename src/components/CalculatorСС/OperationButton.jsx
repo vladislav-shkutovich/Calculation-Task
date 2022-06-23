@@ -4,32 +4,35 @@ import { KeypadButton } from './components'
 
 import { ACTIONS } from '@/constants'
 
-export default ({ dispatch, operation }) => {
-	let currentOperation
+export default class extends React.Component {
+	render(props) {
+		const { dispatch, operation } = this.props
+		let currentOperation
 
-	switch (operation) {
-		case 'CE':
-			currentOperation = ACTIONS.CLEAR
-			break
-		case 'C':
-			currentOperation = ACTIONS.DELETE_DIGIT
-			break
-		case '=':
-			currentOperation = ACTIONS.EVALUATE
-			break
-		default:
-			currentOperation = ACTIONS.CHOOSE_OPERATION
+		switch (operation) {
+			case 'CE':
+				currentOperation = ACTIONS.CLEAR
+				break
+			case 'C':
+				currentOperation = ACTIONS.DELETE_DIGIT
+				break
+			case '=':
+				currentOperation = ACTIONS.EVALUATE
+				break
+			default:
+				currentOperation = ACTIONS.CHOOSE_OPERATION
+		}
+
+		return (
+			<KeypadButton
+				onClick={() =>
+					dispatch({
+						type: currentOperation,
+						payload: { operation },
+					})
+				}>
+				{operation}
+			</KeypadButton>
+		)
 	}
-
-	return (
-		<KeypadButton
-			onClick={() =>
-				dispatch({
-					type: currentOperation,
-					payload: { operation },
-				})
-			}>
-			{operation}
-		</KeypadButton>
-	)
 }

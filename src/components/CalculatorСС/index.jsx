@@ -6,14 +6,18 @@ import Display from './Display'
 import History from './History'
 import Keypad from './Keypad'
 
-export default ({ state, dispatch }) => {
-	return (
-		<Card>
-			<Display state={state} />
+export default class extends React.Component {
+	render(props) {
+		const { state, dispatch } = this.props
 
-			<Keypad dispatch={dispatch} />
+		return (
+			<Card>
+				<Display state={state} />
 
-			<History history={state?.history} />
-		</Card>
-	)
+				<Keypad dispatch={dispatch} />
+
+				<History history={state?.history} />
+			</Card>
+		)
+	}
 }

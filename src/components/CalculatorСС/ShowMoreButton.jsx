@@ -2,10 +2,14 @@ import React from 'react'
 
 import { ShowMoreButton } from './components'
 
-export default ({ handleShowMore }) => {
-	return (
-		<ShowMoreButton onClick={handleShowMore}>
-			Show more...
-		</ShowMoreButton>
-	)
+export default class extends React.Component {
+	render(props) {
+		const { handleShowMore } = this.props
+
+		return (
+			<ShowMoreButton onClick={handleShowMore}>
+				Show more...
+			</ShowMoreButton>
+		)
+	}
 }
