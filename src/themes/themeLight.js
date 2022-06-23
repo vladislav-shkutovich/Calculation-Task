@@ -1,8 +1,14 @@
-import { css } from 'styled-components'
-
-const font = 'sans-serif'
+import {
+	font,
+	boxShadows,
+	above,
+	below,
+	spaces,
+	fontSizes,
+} from './sharedStyles'
 
 // Color palette
+
 const black = '#000000'
 const white = '#ffffff'
 const error = '#bd3636'
@@ -11,42 +17,13 @@ const secondary = '#e6c8ff'
 const secondaryLight = '#f4e4ff'
 const background = '#ffffff'
 
-const boxShadows = [
-	'box-shadow: 0px 4px 24px -8px rgba(0,0,0,0.75)',
-]
-
-const size = {
-	xs: 550,
-	small: 768,
-	med: 992,
-	large: 1200,
-}
-
-const above = Object.keys(size).reduce((acc, label) => {
-	acc[label] = (...args) => css`
-		@media (min-width: ${size[label]}px) {
-			${css(...args)}
-		}
-	`
-	return acc
-}, {})
-
-const below = Object.keys(size).reduce((acc, label) => {
-	acc[label] = (...args) => css`
-		@media (max-width: ${size[label]}px) {
-			${css(...args)}
-		}
-	`
-	return acc
-}, {})
-
 export default {
+	font,
+	boxShadows,
 	above,
 	below,
-	boxShadows,
-	font,
-	spaces: [0, 4, 8, 16, 32, 64, 128],
-	fontSizes: [12, 14, 16, 20, 24, 32, 40, 56, 72, 80],
+	spaces,
+	fontSizes,
 	colors: {
 		primary,
 		secondary,
