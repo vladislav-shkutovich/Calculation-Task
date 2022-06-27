@@ -32,6 +32,17 @@ export function reducer(state, { type, payload }) {
 		case ACTIONS.CHOOSE_OPERATION:
 			if (
 				state.currentOperand == null &&
+				state.previousOperand == null &&
+				payload.operation === '-'
+			)
+				return {
+					...state,
+					operation: payload.operation,
+					previousOperand: 0,
+					currentOperand: state.currentOperand,
+				}
+			if (
+				state.currentOperand == null &&
 				state.previousOperand == null
 			)
 				return state
