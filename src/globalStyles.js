@@ -33,6 +33,6 @@ export default createGlobalStyle`
     display: flex;
     background: linear-gradient(to bottom, ${({ theme }) =>
 			theme.colors.secondaryLight}, ${({ theme }) =>
-	theme.colors.primary});
+	theme.colors.secondary});
   }
 `
