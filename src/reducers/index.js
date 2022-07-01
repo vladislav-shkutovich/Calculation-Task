@@ -16,6 +16,7 @@ export function reducer(state, { type, payload }) {
 				state.currentOperand === '0'
 			)
 				return state
+
 			if (
 				payload.digit === '.' &&
 				state.currentOperand?.includes('.')

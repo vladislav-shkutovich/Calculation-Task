@@ -28,6 +28,15 @@ export default ({ dispatch }) => {
 			<DigitButton digit="0" dispatch={dispatch} />
 			<DigitButton digit=")" dispatch={dispatch} />
 			<OperationButton operation="CE" dispatch={dispatch} />
+			<OperationButton
+				operation="+/-"
+				dispatch={dispatch}
+			/>
+			<OperationButton operation="%" dispatch={dispatch} />
+			<OperationButton
+				operation="History"
+				dispatch={dispatch}
+			/>
 		</Keypad>
 	)
 }

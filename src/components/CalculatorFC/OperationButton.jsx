@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { KeypadButton } from './components'
+import {
+	AdditionalButton,
+	KeypadButton,
+	HistoryButton,
+} from './components'
 
 import { ACTIONS } from '@/constants'
 
@@ -21,7 +25,27 @@ export default ({ dispatch, operation }) => {
 			currentOperation = ACTIONS.CHOOSE_OPERATION
 	}
 
-	return (
+	return operation === '+/-' || operation === '%' ? (
+		<AdditionalButton
+			onClick={() =>
+				dispatch({
+					type: currentOperation,
+					payload: { operation },
+				})
+			}>
+			{operation}
+		</AdditionalButton>
+	) : operation === 'History' ? (
+		<HistoryButton
+			onClick={() =>
+				dispatch({
+					type: currentOperation,
+					payload: { operation },
+				})
+			}>
+			{operation}
+		</HistoryButton>
+	) : (
 		<KeypadButton
 			onClick={() =>
 				dispatch({
