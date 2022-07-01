@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Card = styled.div`
 	display: grid;
+
 	grid-template-rows: 1fr 6fr;
 	grid-template-columns: 3fr 1fr;
 
@@ -19,9 +20,17 @@ export const Card = styled.div`
 
 export const Display = styled.div`
 	display: grid;
-	grid-area: 1 / 1 / 2 / 2;
 
-	margin: 20px 5px 5px 20px;
+	/* grid-area: 1 / 1 / 2 / 2; */
+	/* grid-area: 1 / 1 / 2 / 3; */
+
+	grid-area: ${({ state }) => {
+		return state.historyIsShown
+			? '1 / 1 / 2 / 2'
+			: '1 / 1 / 2 / 3'
+	}};
+
+	margin: 20px 15px 5px 20px;
 
 	color: ${({ theme }) => theme.colors.black};
 	border-bottom: 2px solid
@@ -36,7 +45,21 @@ export const Display = styled.div`
 
 export const Keypad = styled.div`
 	display: grid;
-	grid-area: 2 / 1 / 3 / 2;
+
+	max-width: 675px;
+	align-items: center;
+	justify-self: center;
+	column-gap: 30px;
+
+	/* grid-area: 2 / 1 / 3 / 2; */
+	/* grid-area: 2 / 1 / 3 / 3; */
+
+	grid-area: ${({ state }) => {
+		return state.historyIsShown
+			? '2 / 1 / 3 / 2'
+			: '2 / 1 / 3 / 3'
+	}};
+
 	grid-template-rows: repeat(5, 1fr);
 	grid-template-columns: repeat(5, 1fr);
 
@@ -46,8 +69,10 @@ export const Keypad = styled.div`
 	margin: 5px 5px 20px 20px;
 
 	& > * {
-		width: 60%;
-		height: 60%;
+		/* width: 60%; */
+		/* height: 60%; */
+		width: 100px;
+		height: 80px;
 
 		border: 2px solid ${({ theme }) => theme.colors.black};
 		border-radius: 10%;
@@ -74,14 +99,14 @@ export const Keypad = styled.div`
 export const KeypadButton = styled.button``
 
 export const AdditionalButton = styled.button`
-	margin-left: 200%;
+	margin-left: 260%;
 `
 
 export const HistoryButton = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 200%;
+	margin-left: 260%;
 
 	font-size: ${({ theme }) => theme.fontSizes[3]}px;
 `
@@ -105,6 +130,7 @@ export const ShowMoreButton = styled.button`
 
 export const History = styled.div`
 	display: grid;
+	/* display: none; */
 	grid-area: 1 / 2 / 3 / 3;
 	align-content: flex-start;
 	margin: 20px 20px 20px 5px;

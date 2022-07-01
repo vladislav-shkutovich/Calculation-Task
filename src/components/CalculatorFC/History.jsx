@@ -4,7 +4,7 @@ import { History } from './components'
 
 import ShowMoreButton from './ShowMoreButton'
 
-export default ({ history }) => {
+export default ({ history, historyIsShown }) => {
 	const [
 		fullHistoryIsShown,
 		setFullHistoryIsShown,
@@ -19,7 +19,7 @@ export default ({ history }) => {
 		setButtonIsHidden(true)
 	}
 
-	return (
+	return historyIsShown ? (
 		<History>
 			<p>History</p>
 			<ul>
@@ -28,7 +28,9 @@ export default ({ history }) => {
 						0,
 						fullHistoryIsShown ? history.length : 3,
 					)
-					.map((el, i) => <li key={i}>{el}</li>)}
+					.map((el, i) => (
+						<li key={i}>{el}</li>
+					))}
 			</ul>
 			{history?.length > 3 && !buttonIsHidden && (
 				<ShowMoreButton
@@ -36,5 +38,5 @@ export default ({ history }) => {
 				/>
 			)}
 		</History>
-	)
+	) : null
 }

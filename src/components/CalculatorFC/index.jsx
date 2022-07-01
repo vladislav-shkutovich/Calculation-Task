@@ -12,9 +12,12 @@ export default ({ state, dispatch }) => {
 		<Card>
 			<Display state={state} />
 
-			<Keypad dispatch={dispatch} />
+			<Keypad dispatch={dispatch} state={state} />
 			<ErrorBoundary>
-				<History history={state?.history} />
+				<History
+					history={state?.history}
+					historyIsShown={state.historyIsShown}
+				/>
 			</ErrorBoundary>
 		</Card>
 	)

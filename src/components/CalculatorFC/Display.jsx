@@ -4,7 +4,7 @@ import { Display } from './components'
 
 export default ({ state }) => {
 	return (
-		<Display>
+		<Display state={state}>
 			{state.previousOperand}
 			{state.operation}
 			{state.currentOperand}

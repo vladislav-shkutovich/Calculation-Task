@@ -49,6 +49,7 @@ export default () => {
 			previousOperand,
 			operation,
 			history,
+			historyIsShown = true,
 			selectedTheme = 'light',
 		},
 		dispatch,
@@ -76,6 +77,7 @@ export default () => {
 										previousOperand,
 										operation,
 										history,
+										historyIsShown,
 									}}
 									dispatch={dispatch}
 								/>
@@ -91,6 +93,7 @@ export default () => {
 										previousOperand,
 										operation,
 										history,
+										historyIsShown,
 									}}
 									dispatch={dispatch}
 								/>

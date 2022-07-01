@@ -5,9 +5,9 @@ import { Keypad } from './components'
 import DigitButton from './DigitButton'
 import OperationButton from './OperationButton'
 
-export default ({ dispatch }) => {
+export default ({ state, dispatch }) => {
 	return (
-		<Keypad>
+		<Keypad state={state}>
 			<OperationButton operation="C" dispatch={dispatch} />
 			<DigitButton digit="7" dispatch={dispatch} />
 			<DigitButton digit="8" dispatch={dispatch} />

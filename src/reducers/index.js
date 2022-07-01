@@ -3,6 +3,12 @@ import { evaluate } from '@/helpers'
 
 export function reducer(state, { type, payload }) {
 	switch (type) {
+		case ACTIONS.TOGGLE_HISTORY:
+			return {
+				...state,
+				historyIsShown: !state.historyIsShown,
+			}
+
 		case ACTIONS.ADD_DIGIT:
 			if (state.overwrite === true) {
 				return {
@@ -31,6 +37,8 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.CHOOSE_OPERATION:
+			if (payload.operation === 'History') return state
+
 			if (
 				state.currentOperand == null &&
 				state.previousOperand == null &&
