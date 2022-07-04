@@ -10,6 +10,17 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.ADD_DIGIT:
+			// to overwrite '0' digit
+			if (
+				state.currentOperand === '0' &&
+				state.currentOperand.length === 1 &&
+				payload.digit !== '.'
+			)
+				return {
+					...state,
+					currentOperand: payload.digit,
+				}
+
 			if (state.overwrite === true) {
 				return {
 					...state,
@@ -17,6 +28,7 @@ export function reducer(state, { type, payload }) {
 					overwrite: false,
 				}
 			}
+
 			if (
 				payload.digit === '0' &&
 				state.currentOperand === '0'
@@ -37,8 +49,6 @@ export function reducer(state, { type, payload }) {
 			}
 
 		case ACTIONS.CHOOSE_OPERATION:
-			if (payload.operation === 'History') return state
-
 			if (
 				state.currentOperand == null &&
 				state.previousOperand == null &&

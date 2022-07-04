@@ -45,11 +45,11 @@ const SettingsPage = lazy(() =>
 export default () => {
 	const [
 		{
-			currentOperand,
+			currentOperand = '0',
 			previousOperand,
 			operation,
 			history,
-			historyIsShown = true,
+			historyIsShown,
 			selectedTheme = 'light',
 		},
 		dispatch,

@@ -17,7 +17,9 @@ export function evaluate({
 
 	try {
 		const result = mathjsEvaluate(calculation)
-		updatedHistory.push(calculation)
+		updatedHistory.push(
+			calculation + ' = ' + result.toFixed(3).toString(),
+		)
 
 		formattedResult = Number.isInteger(result)
 			? result.toString()
