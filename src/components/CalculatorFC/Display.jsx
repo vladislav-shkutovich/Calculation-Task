@@ -5,9 +5,14 @@ import { Display } from './components'
 export default ({ state }) => {
 	return (
 		<Display state={state}>
-			{state.previousOperand}
-			{state.operation}
-			{state.currentOperand}
+			<div className="background-values">
+				{state.previousOperand}
+				{state.operation}
+			</div>
+
+			<div className="front-values">
+				{state.currentOperand}
+			</div>
 		</Display>
 	)
 }

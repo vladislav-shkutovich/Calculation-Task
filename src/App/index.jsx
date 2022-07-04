@@ -45,7 +45,7 @@ const SettingsPage = lazy(() =>
 export default () => {
 	const [
 		{
-			currentOperand = '0',
+			currentOperand,
 			previousOperand,
 			operation,
 			history,

@@ -20,7 +20,7 @@ export const Card = styled.div`
 
 export const Display = styled.div`
 	display: grid;
-
+	height: 120px;
 	/* grid-area: 1 / 1 / 2 / 2; */
 	/* grid-area: 1 / 1 / 2 / 3; */
 
@@ -40,7 +40,13 @@ export const Display = styled.div`
 	align-items: center;
 	letter-spacing: 2px;
 
-	font-size: ${({ theme }) => theme.fontSizes[5]}px;
+	& > .front-values {
+		font-size: ${({ theme }) => theme.fontSizes[5]}px;
+	}
+
+	& > .background-values {
+		font-size: ${({ theme }) => theme.fontSizes[3]}px;
+	}
 `
 
 export const Keypad = styled.div`
@@ -49,7 +55,8 @@ export const Keypad = styled.div`
 	max-width: 675px;
 	align-items: center;
 	justify-self: center;
-	column-gap: 30px;
+	grid-row-gap: 5px;
+	grid-column-gap: 10px;
 
 	/* grid-area: 2 / 1 / 3 / 2; */
 	/* grid-area: 2 / 1 / 3 / 3; */
@@ -99,14 +106,14 @@ export const Keypad = styled.div`
 export const KeypadButton = styled.button``
 
 export const AdditionalButton = styled.button`
-	margin-left: 260%;
+	margin-left: 220%;
 `
 
 export const HistoryButton = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 260%;
+	margin-left: 220%;
 
 	font-size: ${({ theme }) => theme.fontSizes[3]}px;
 `
@@ -160,8 +167,9 @@ export const History = styled.div`
 
 		& ::-webkit-scrollbar-thumb {
 			border-radius: 5px;
+			border: 1px solid ${({ theme }) => theme.colors.black};
 			background-color: ${({ theme }) =>
-				theme.colors.black};
+				theme.colors.primary};
 		}
 
 		& ::-webkit-scrollbar-track {

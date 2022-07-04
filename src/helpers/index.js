@@ -13,7 +13,7 @@ export function evaluate({
 	const updatedHistory =
 		history === undefined ? [] : [...history]
 
-	let formattedResult = 'Invalid expression'
+	let formattedResult = 'Error'
 
 	try {
 		const result = mathjsEvaluate(calculation)
