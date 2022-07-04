@@ -88,7 +88,8 @@ export function reducer(state, { type, payload }) {
 					state.operation +
 					state.currentOperand,
 				operation: payload.operation,
-				currentOperand: null,
+				currentOperand: evaluate(state).formattedResult,
+				overwrite: true,
 			}
 
 		case ACTIONS.DELETE_DIGIT:
@@ -99,11 +100,22 @@ export function reducer(state, { type, payload }) {
 					currentOperand: null,
 				}
 			if (state.currentOperand == null) return state
+
+			if (
+				state.currentOperand.length === 2 &&
+				!Number(state.currentOperand[0])
+			)
+				return {
+					...state,
+					currentOperand: null,
+				}
+
 			if (state.currentOperand.length === 1)
 				return {
 					...state,
 					currentOperand: null,
 				}
+
 			return {
 				...state,
 				currentOperand: state.currentOperand.slice(0, -1),
@@ -164,7 +176,7 @@ export function reducer(state, { type, payload }) {
 			}
 			return {
 				...state,
-				currentOperand: -state.currentOperand,
+				currentOperand: String(0 - state.currentOperand),
 			}
 	}
 }

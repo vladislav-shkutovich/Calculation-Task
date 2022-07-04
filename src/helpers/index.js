@@ -1,5 +1,11 @@
 import { evaluate as mathjsEvaluate } from 'mathjs'
 
+function format(stringValue) {
+	return Number.isInteger(stringValue)
+		? stringValue.toString()
+		: stringValue.toFixed(3).toString()
+}
+
 export function evaluate({
 	currentOperand,
 	previousOperand,
@@ -18,14 +24,12 @@ export function evaluate({
 	try {
 		const result = mathjsEvaluate(calculation)
 		updatedHistory.push(
-			calculation + ' = ' + result.toFixed(3).toString(),
+			calculation + ' = ' + format(result),
 		)
 
-		formattedResult = Number.isInteger(result)
-			? result.toString()
-			: result.toFixed(3).toString()
+		formattedResult = format(result)
 
-		return { formattedResult, updatedHistory }
+		return { calculation, formattedResult, updatedHistory }
 	} catch {
 		return { formattedResult, updatedHistory }
 	}
