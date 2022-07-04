@@ -3,6 +3,7 @@ export const ACTION_PREFIX = '@/template'
 export const ACTIONS = {
 	ADD_DIGIT: 'add-digit',
 	CHOOSE_OPERATION: 'choose-operation',
+	TOGGLE_SIGN: 'toggle-sign',
 	TOGGLE_HISTORY: 'toggle-history',
 	CLEAR: 'clear',
 	DELETE_DIGIT: 'delete-digit',

@@ -157,5 +157,14 @@ export function reducer(state, { type, payload }) {
 				...state,
 				selectedTheme: payload,
 			}
+
+		case ACTIONS.TOGGLE_SIGN:
+			if (state.currentOperand == null) {
+				return state
+			}
+			return {
+				...state,
+				currentOperand: -state.currentOperand,
+			}
 	}
 }

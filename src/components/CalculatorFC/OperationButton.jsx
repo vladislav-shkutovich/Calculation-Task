@@ -21,6 +21,9 @@ export default ({ dispatch, operation }) => {
 		case '=':
 			currentOperation = ACTIONS.EVALUATE
 			break
+		case '+/-':
+			currentOperation = ACTIONS.TOGGLE_SIGN
+			break
 		case 'History':
 			currentOperation = ACTIONS.TOGGLE_HISTORY
 			break
