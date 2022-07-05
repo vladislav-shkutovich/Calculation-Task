@@ -12,6 +12,12 @@ export default ({ dispatch, operation }) => {
 	let currentOperation
 
 	switch (operation) {
+		case '(':
+			currentOperation = ACTIONS.ADD_BRACKET
+			break
+		case ')':
+			currentOperation = ACTIONS.ADD_BRACKET
+			break
 		case 'CE':
 			currentOperation = ACTIONS.CLEAR
 			break

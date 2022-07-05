@@ -2,6 +2,7 @@ export const ACTION_PREFIX = '@/template'
 
 export const ACTIONS = {
 	ADD_DIGIT: 'add-digit',
+	ADD_BRACKET: 'add-bracket',
 	CHOOSE_OPERATION: 'choose-operation',
 	TOGGLE_SIGN: 'toggle-sign',
 	TOGGLE_HISTORY: 'toggle-history',
