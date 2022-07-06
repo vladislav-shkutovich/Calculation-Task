@@ -1,4 +1,9 @@
-import React, { useReducer, lazy, Suspense } from 'react'
+import React, {
+	useReducer,
+	useEffect,
+	lazy,
+	Suspense,
+} from 'react'
 
 // Components
 import Loader from '@/components/Loader'
@@ -11,14 +16,19 @@ import {
 	Redirect,
 } from 'react-router-dom'
 
+// Constants for routes and initial state
 import {
 	HOME_PAGE_FC_ROUTE,
 	HOME_PAGE_CC_ROUTE,
 	SETTINGS_PAGE_ROUTE,
+	initialState,
 } from '@/constants'
 
 // Reducers
 import { reducer } from '@/reducers'
+
+// Helpers
+import { setLocalStorage } from '@/helpers'
 
 // Styling
 import { ThemeProvider } from 'styled-components'
@@ -50,10 +60,28 @@ export default () => {
 			operation,
 			history,
 			historyIsShown,
-			selectedTheme = 'light',
+			selectedTheme,
 		},
 		dispatch,
-	] = useReducer(reducer, {})
+	] = useReducer(reducer, initialState)
+
+	useEffect(() => {
+		setLocalStorage({
+			currentOperand,
+			previousOperand,
+			operation,
+			history,
+			historyIsShown,
+			selectedTheme,
+		})
+	}, [
+		currentOperand,
+		previousOperand,
+		operation,
+		history,
+		historyIsShown,
+		selectedTheme,
+	])
 
 	const currentTheme =
 		selectedTheme === 'light'

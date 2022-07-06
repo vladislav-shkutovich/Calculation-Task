@@ -13,13 +13,13 @@ export function evaluate({
 	operation,
 	history,
 }) {
-	console.log(
-		previousOperand +
-			' ' +
-			operation +
-			' ' +
-			currentOperand,
-	)
+	// console.log(
+	// 	previousOperand +
+	// 		' ' +
+	// 		operation +
+	// 		' ' +
+	// 		currentOperand,
+	// )
 
 	const calculation =
 		previousOperand + operation + currentOperand

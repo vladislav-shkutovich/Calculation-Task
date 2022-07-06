@@ -1,2 +1,2 @@
-export * from './evaluateIntermediateResult'
 export * from './evaluateResult'
+export * from './localStorageHandler'

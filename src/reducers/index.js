@@ -21,7 +21,6 @@ export function reducer(state, { type, payload }) {
 					currentOperand: payload.digit,
 				}
 
-			/*
 			if (
 				state.currentOperand === '(' &&
 				state.currentOperand.length === 1
@@ -30,7 +29,6 @@ export function reducer(state, { type, payload }) {
 					...state,
 					currentOperand: '(' + payload.digit,
 				}
-			*/
 
 			if (state.overwrite === true) {
 				return {
@@ -59,7 +57,6 @@ export function reducer(state, { type, payload }) {
 				}`,
 			}
 
-		/*
 		case ACTIONS.ADD_BRACKET:
 			console.log('add-bracket-action')
 			if (payload.operation === '(')
@@ -84,7 +81,6 @@ export function reducer(state, { type, payload }) {
 					currentOperand: state.previousOperand + ')',
 				}
 			return state
-		*/
 
 		case ACTIONS.CHOOSE_OPERATION:
 			if (
@@ -119,7 +115,6 @@ export function reducer(state, { type, payload }) {
 					currentOperand: null,
 				}
 
-			/*
 			// todo CHANGE LOGIC HERE
 			if (state.previousOperand.includes('('))
 				return {
@@ -129,7 +124,6 @@ export function reducer(state, { type, payload }) {
 					currentOperand: null,
 					overwrite: true,
 				}
-			*/
 
 			return {
 				...state,
