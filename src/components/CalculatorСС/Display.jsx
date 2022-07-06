@@ -7,10 +7,14 @@ export default class extends React.Component {
 		const { state } = this.props
 
 		return (
-			<Display>
-				{state.previousOperand}
-				{state.operation}
-				{state.currentOperand}
+			<Display state={state}>
+				<div className="background-values">
+					{state.previousOperand}
+					{state.operation}
+				</div>
+				<div className="front-values">
+					{state.currentOperand}
+				</div>
 			</Display>
 		)
 	}

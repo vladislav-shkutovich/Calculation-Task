@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { KeypadButton } from './components'
+import {
+	AdditionalButton,
+	KeypadButton,
+	HistoryButton,
+} from './components'
 
 import { ACTIONS } from '@/constants'
 
@@ -10,6 +14,12 @@ export default class extends React.Component {
 		let currentOperation
 
 		switch (operation) {
+			case '(':
+				currentOperation = ACTIONS.ADD_BRACKET
+				break
+			case ')':
+				currentOperation = ACTIONS.ADD_BRACKET
+				break
 			case 'CE':
 				currentOperation = ACTIONS.CLEAR
 				break
@@ -19,11 +29,37 @@ export default class extends React.Component {
 			case '=':
 				currentOperation = ACTIONS.EVALUATE
 				break
+			case '+/-':
+				currentOperation = ACTIONS.TOGGLE_SIGN
+				break
+			case 'History':
+				currentOperation = ACTIONS.TOGGLE_HISTORY
+				break
 			default:
 				currentOperation = ACTIONS.CHOOSE_OPERATION
 		}
 
-		return (
+		return operation === '+/-' || operation === '%' ? (
+			<AdditionalButton
+				onClick={() =>
+					dispatch({
+						type: currentOperation,
+						payload: { operation },
+					})
+				}>
+				{operation}
+			</AdditionalButton>
+		) : operation === 'History' ? (
+			<HistoryButton
+				onClick={() =>
+					dispatch({
+						type: currentOperation,
+						payload: { operation },
+					})
+				}>
+				{operation}
+			</HistoryButton>
+		) : (
 			<KeypadButton
 				onClick={() =>
 					dispatch({

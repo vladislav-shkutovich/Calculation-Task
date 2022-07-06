@@ -21,13 +21,13 @@ export default class extends React.Component {
 	}
 
 	render() {
-		const { history } = this.props
+		const { history, historyIsShown } = this.props
 		const {
 			fullHistoryIsShown,
 			buttonIsHidden,
 		} = this.state
 
-		return (
+		return historyIsShown ? (
 			<History>
 				<p>History</p>
 				<ul>
@@ -36,7 +36,9 @@ export default class extends React.Component {
 							0,
 							fullHistoryIsShown ? history.length : 3,
 						)
-						.map((el, i) => <li key={i}>{el}</li>)}
+						.map((el, i) => (
+							<li key={i}>{el}</li>
+						))}
 				</ul>
 				{history?.length > 3 && !buttonIsHidden && (
 					<ShowMoreButton
@@ -44,6 +46,6 @@ export default class extends React.Component {
 					/>
 				)}
 			</History>
-		)
+		) : null
 	}
 }

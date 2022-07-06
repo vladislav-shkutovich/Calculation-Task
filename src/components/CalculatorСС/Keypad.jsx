@@ -7,10 +7,10 @@ import OperationButton from './OperationButton'
 
 export default class extends React.Component {
 	render(props) {
-		const { dispatch } = this.props
+		const { state, dispatch } = this.props
 
 		return (
-			<Keypad>
+			<Keypad state={state}>
 				<OperationButton
 					operation="C"
 					dispatch={dispatch}
@@ -45,11 +45,29 @@ export default class extends React.Component {
 					dispatch={dispatch}
 				/>
 				<DigitButton digit="." dispatch={dispatch} />
-				<DigitButton digit="(" dispatch={dispatch} />
+				<OperationButton
+					operation="("
+					dispatch={dispatch}
+				/>
 				<DigitButton digit="0" dispatch={dispatch} />
-				<DigitButton digit=")" dispatch={dispatch} />
+				<OperationButton
+					operation=")"
+					dispatch={dispatch}
+				/>
 				<OperationButton
 					operation="CE"
+					dispatch={dispatch}
+				/>
+				<OperationButton
+					operation="+/-"
+					dispatch={dispatch}
+				/>
+				<OperationButton
+					operation="%"
+					dispatch={dispatch}
+				/>
+				<OperationButton
+					operation="History"
 					dispatch={dispatch}
 				/>
 			</Keypad>
