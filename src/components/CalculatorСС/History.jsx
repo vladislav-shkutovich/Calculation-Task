@@ -1,5 +1,7 @@
 import React from 'react'
 
+import i18n from 'i18next'
+
 import { History } from './components'
 
 import ShowMoreButton from './ShowMoreButton'
@@ -29,7 +31,7 @@ export default class extends React.Component {
 
 		return historyIsShown ? (
 			<History>
-				<p>History</p>
+				<p>{i18n.t('history')}</p>
 				<ul>
 					{history
 						?.slice(

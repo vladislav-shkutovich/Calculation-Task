@@ -1,11 +1,15 @@
 import React from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 import { Keypad } from './components'
 
 import DigitButton from './DigitButton'
 import OperationButton from './OperationButton'
 
 export default ({ state, dispatch }) => {
+	const { t } = useTranslation()
+
 	return (
 		<Keypad state={state}>
 			<OperationButton operation="C" dispatch={dispatch} />
@@ -34,7 +38,7 @@ export default ({ state, dispatch }) => {
 			/>
 			<OperationButton operation="%" dispatch={dispatch} />
 			<OperationButton
-				operation="History"
+				operation={t('history')}
 				dispatch={dispatch}
 			/>
 		</Keypad>

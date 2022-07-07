@@ -33,6 +33,9 @@ export default ({ dispatch, operation }) => {
 		case 'History':
 			currentOperation = ACTIONS.TOGGLE_HISTORY
 			break
+		case 'История':
+			currentOperation = ACTIONS.TOGGLE_HISTORY
+			break
 		default:
 			currentOperation = ACTIONS.CHOOSE_OPERATION
 	}
@@ -47,7 +50,7 @@ export default ({ dispatch, operation }) => {
 			}>
 			{operation}
 		</AdditionalButton>
-	) : operation === 'History' ? (
+	) : operation === 'History' || operation === 'История' ? (
 		<HistoryButton
 			onClick={() =>
 				dispatch({

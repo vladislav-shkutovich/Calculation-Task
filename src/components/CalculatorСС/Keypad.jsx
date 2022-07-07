@@ -1,5 +1,7 @@
 import React from 'react'
 
+import i18n from 'i18next'
+
 import { Keypad } from './components'
 
 import DigitButton from './DigitButton'
@@ -67,7 +69,7 @@ export default class extends React.Component {
 					dispatch={dispatch}
 				/>
 				<OperationButton
-					operation="History"
+					operation={i18n.t('history')}
 					dispatch={dispatch}
 				/>
 			</Keypad>

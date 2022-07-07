@@ -1,5 +1,7 @@
 import React from 'react'
 
+import i18n from 'i18next'
+
 import { ShowMoreButton } from './components'
 
 export default class extends React.Component {
@@ -8,7 +10,7 @@ export default class extends React.Component {
 
 		return (
 			<ShowMoreButton onClick={handleShowMore}>
-				Show more...
+				{i18n.t('show_more')}
 			</ShowMoreButton>
 		)
 	}

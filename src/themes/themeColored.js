@@ -20,10 +20,10 @@ import {
 const black = '#000000'
 const white = '#ffffff'
 const error = '#bd3636'
-const primary = '#9058eb'
+const primary = '#a575f1'
 const secondary = '#a697ff'
 const secondaryLight = '#d2caff'
-const background = '#eae7fc'
+const background = '#e5e1ff'
 
 export default {
 	font,

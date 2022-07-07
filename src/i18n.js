@@ -10,15 +10,38 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 // Temporarily leaving translations here
 // then will move it to public/locales
 const translationEn = {
-	calculator_app: 'Home(FC)',
+	calculator_app: 'Calculator App',
 	home_fc: 'Home(FC)',
 	home_сс: 'Home(СC)',
 	settings: 'Settings',
+	history: 'History',
+	switch_theme: 'Switch Theme',
+	light_theme: 'Light Theme',
+	colored_theme: 'Colored Theme',
+	dark_theme: 'Dark Theme',
+	switch_language: 'Switch Language',
+	english: 'English',
+	russian: 'Russian',
+	clear_history: 'Clear History',
+	clear_history_and_result: 'Clear History & Result',
+	show_more: 'Show more...',
 }
 const translationRu = {
+	calculator_app: 'Калькулятор',
 	home_fc: 'Домой(ФК)',
-	home_сс: 'Домой(ФК)',
+	home_сс: 'Домой(КК)',
 	settings: 'Настройки',
+	history: 'История',
+	switch_theme: 'Сменить тему',
+	light_theme: 'Светлая тема',
+	colored_theme: 'Цветная тема',
+	dark_theme: 'Темная тема',
+	switch_language: 'Сменить язык',
+	english: 'Английский',
+	russian: 'Русский',
+	clear_history: 'Очистить историю',
+	clear_history_and_result: 'Очистить историю и результат',
+	show_more: 'Показать еще...',
 }
 
 export default i18n

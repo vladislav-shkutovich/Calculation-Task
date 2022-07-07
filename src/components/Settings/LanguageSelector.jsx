@@ -5,7 +5,7 @@ import { Dropdown } from './components'
 import { useTranslation } from 'react-i18next'
 
 export default ({ selectedTheme, dispatch }) => {
-	const { i18n } = useTranslation()
+	const { i18n, t } = useTranslation()
 
 	const handleLanguage = event =>
 		i18n.changeLanguage(event.target.value)
@@ -18,8 +18,8 @@ export default ({ selectedTheme, dispatch }) => {
 		<Dropdown
 			defaultValue={languageByDefault}
 			onChange={handleLanguage}>
-			<option value="en">English</option>
-			<option value="ru">Russian</option>
+			<option value="en">{t('english')}</option>
+			<option value="ru-RU">{t('russian')}</option>
 		</Dropdown>
 	)
 }

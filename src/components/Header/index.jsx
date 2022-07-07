@@ -17,7 +17,7 @@ export default () => {
 
 	return (
 		<Card color={theme.colors.primary}>
-			<Heading>Calculator App</Heading>
+			<Heading>{t('calculator_app')}</Heading>
 			<Anchor>
 				<Link to={HOME_PAGE_FC_ROUTE}>{t('home_fc')}</Link>
 			</Anchor>

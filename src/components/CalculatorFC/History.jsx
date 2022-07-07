@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 
+import { useTranslation } from 'react-i18next'
+
 import { History } from './components'
 
 import ShowMoreButton from './ShowMoreButton'
 
 export default ({ history, historyIsShown }) => {
+	const { t } = useTranslation()
+
 	const [
 		fullHistoryIsShown,
 		setFullHistoryIsShown,
@@ -21,7 +25,7 @@ export default ({ history, historyIsShown }) => {
 
 	return historyIsShown ? (
 		<History>
-			<p>History</p>
+			<p>{t('history')}</p>
 			<ul>
 				{history
 					?.slice(

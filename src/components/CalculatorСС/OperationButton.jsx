@@ -35,6 +35,9 @@ export default class extends React.Component {
 			case 'History':
 				currentOperation = ACTIONS.TOGGLE_HISTORY
 				break
+			case 'История':
+				currentOperation = ACTIONS.TOGGLE_HISTORY
+				break
 			default:
 				currentOperation = ACTIONS.CHOOSE_OPERATION
 		}
@@ -49,7 +52,8 @@ export default class extends React.Component {
 				}>
 				{operation}
 			</AdditionalButton>
-		) : operation === 'History' ? (
+		) : operation === 'History' ||
+		  operation === 'История' ? (
 			<HistoryButton
 				onClick={() =>
 					dispatch({
