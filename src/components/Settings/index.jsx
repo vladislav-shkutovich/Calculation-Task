@@ -3,6 +3,7 @@ import React from 'react'
 import { Card, Heading, Description } from './components'
 
 import ThemeSelector from './ThemeSelector'
+import LanguageSelector from './LanguageSelector'
 import CleanerButton from './CleanerButton'
 
 export default ({ selectedTheme, dispatch }) => {
@@ -14,6 +15,12 @@ export default ({ selectedTheme, dispatch }) => {
 				selectedTheme={selectedTheme}
 				dispatch={dispatch}
 			/>
+			<Description>Switch Language</Description>
+			<LanguageSelector
+				selectedTheme={selectedTheme}
+				dispatch={dispatch}
+			/>
+
 			<CleanerButton
 				type="CLEAR_HISTORY"
 				name="Clear History"

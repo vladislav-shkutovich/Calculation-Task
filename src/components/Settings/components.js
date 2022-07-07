@@ -24,24 +24,24 @@ export const Card = styled.div`
 export const Heading = styled.div`
 	font-size: ${({ theme }) => theme.fontSizes[5]}px;
 `
-export const Description = styled.div`
+export const Description = styled.p`
 	font-size: ${({ theme }) => theme.fontSizes[2]}px;
 	padding: 5px;
 `
 
-export const ThemeSelector = styled.select`
+export const Dropdown = styled.select`
 	height: 50px;
 	font-size: ${({ theme }) => theme.fontSizes[2]}px;
 
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	color: ${({ theme }) => theme.colors.black};
 	background: linear-gradient(
-		to bottom,
+		to left,
 		${({ theme }) => theme.colors.background},
 		${({ theme }) => theme.colors.secondaryLight}
 	);
 
-	margin-top: 5px;
+	margin: 5px 0 10px 0;
 
 	& > option {
 		color: ${({ theme }) => theme.colors.black};
@@ -51,15 +51,15 @@ export const ThemeSelector = styled.select`
 `
 
 export const CleanerButton = styled.button`
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: ${({ theme }) => theme.fontSizes[2]}px;
 
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	color: ${({ theme }) => theme.colors.black};
 	background: linear-gradient(
-		to bottom,
+		to bottom left,
 		${({ theme }) => theme.colors.background},
-		${({ theme }) => theme.colors.secondaryLight}
+		${({ theme }) => theme.colors.secondary}
 	);
 
 	& :hover {
