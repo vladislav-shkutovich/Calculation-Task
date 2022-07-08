@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Message } from './components'
+import { Message } from './styled'
 
 export default class ErrorBoundary extends React.Component {
 	state = {

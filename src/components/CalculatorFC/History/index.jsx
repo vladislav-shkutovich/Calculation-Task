@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { History } from './components'
+import { StyledHistory } from './styled'
 
-import ShowMoreButton from './ShowMoreButton'
+import ShowMoreButton from '../ShowMoreButton'
 
 export default ({ history, historyIsShown }) => {
 	const { t } = useTranslation()
@@ -24,7 +24,7 @@ export default ({ history, historyIsShown }) => {
 	}
 
 	return historyIsShown ? (
-		<History>
+		<StyledHistory>
 			<p>{t('history')}</p>
 			<ul>
 				{history
@@ -41,6 +41,6 @@ export default ({ history, historyIsShown }) => {
 					handleShowMore={showFullHistoryHandler}
 				/>
 			)}
-		</History>
+		</StyledHistory>
 	) : null
 }

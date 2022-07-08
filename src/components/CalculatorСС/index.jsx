@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Card } from './components'
 
-import ErrorBoundary from '@/ErrorBoundary'
+import ErrorBoundary from '@/components/ErrorBoundary'
 
 import Display from './Display'
 import History from './History'

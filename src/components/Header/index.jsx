@@ -3,7 +3,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 
 import theme from '@/themes/themeColored'
-import { Card, Heading, Anchor } from './components'
+import { StyledHeader, Heading, Anchor } from './styled'
 import {
 	HOME_PAGE_FC_ROUTE,
 	HOME_PAGE_CC_ROUTE,
@@ -16,7 +16,7 @@ export default () => {
 	const { t } = useTranslation()
 
 	return (
-		<Card color={theme.colors.primary}>
+		<StyledHeader color={theme.colors.primary}>
 			<Heading>{t('calculator_app')}</Heading>
 			<Anchor>
 				<Link to={HOME_PAGE_FC_ROUTE}>{t('home_fc')}</Link>
@@ -29,6 +29,6 @@ export default () => {
 					{t('settings')}
 				</Link>
 			</Anchor>
-		</Card>
+		</StyledHeader>
 	)
 }

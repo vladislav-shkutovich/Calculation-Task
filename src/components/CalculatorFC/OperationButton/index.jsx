@@ -1,10 +1,10 @@
 import React from 'react'
 
 import {
-	AdditionalButton,
-	KeypadButton,
-	HistoryButton,
-} from './components'
+	StyledAdditionalButton,
+	StyledKeypadButton,
+	StyledHistoryButton,
+} from './styled'
 
 import { ACTIONS } from '@/constants'
 
@@ -41,7 +41,7 @@ export default ({ dispatch, operation }) => {
 	}
 
 	return operation === '+/-' || operation === '%' ? (
-		<AdditionalButton
+		<StyledAdditionalButton
 			onClick={() =>
 				dispatch({
 					type: currentOperation,
@@ -49,9 +49,9 @@ export default ({ dispatch, operation }) => {
 				})
 			}>
 			{operation}
-		</AdditionalButton>
+		</StyledAdditionalButton>
 	) : operation === 'History' || operation === 'История' ? (
-		<HistoryButton
+		<StyledHistoryButton
 			onClick={() =>
 				dispatch({
 					type: currentOperation,
@@ -59,9 +59,9 @@ export default ({ dispatch, operation }) => {
 				})
 			}>
 			{operation}
-		</HistoryButton>
+		</StyledHistoryButton>
 	) : (
-		<KeypadButton
+		<StyledKeypadButton
 			onClick={() =>
 				dispatch({
 					type: currentOperation,
@@ -69,6 +69,6 @@ export default ({ dispatch, operation }) => {
 				})
 			}>
 			{operation}
-		</KeypadButton>
+		</StyledKeypadButton>
 	)
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
+export const StyledHeader = styled.div`
 	background: linear-gradient(
 		to top,
 		${({ theme }) => theme.colors.primary},

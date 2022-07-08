@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { Display } from './components'
+import { StyledDisplay } from './styled'
 
 export default ({ state }) => {
 	return (
-		<Display state={state}>
+		<StyledDisplay state={state}>
 			<div className="background-values">
 				{state.previousOperand}
 				{state.operation}
@@ -13,6 +13,6 @@ export default ({ state }) => {
 			<div className="front-values">
 				{state.currentOperand}
 			</div>
-		</Display>
+		</StyledDisplay>
 	)
 }

@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 
 import Application from '@/App'
 
-// todo to App.jsx
-import './i18n'
+import './helpers/i18n'
 
 ReactDOM.render(
 	<Application />,

@@ -1,0 +1,17 @@
+{
+	"calculator_app": "Калькулятор",
+	"home_fc": "Домой(ФК)",
+	"home_сс": "Домой(КК)",
+	"settings": "Настройки",
+	"history": "История",
+	"switch_theme": "Сменить тему",
+	"light_theme": "Светлая тема",
+	"colored_theme": "Цветная тема",
+	"dark_theme": "Темная тема",
+	"switch_language": "Сменить язык",
+	"english": "Английский",
+	"russian": "Русский",
+	"clear_history": "Очистить историю",
+	"clear_history_and_result": "Очистить историю и результат",
+	"show_more": "Показать еще..."
+}

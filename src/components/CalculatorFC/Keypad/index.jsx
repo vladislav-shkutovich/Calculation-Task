@@ -2,16 +2,16 @@ import React from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { Keypad } from './components'
+import { StyledKeypad } from './styled'
 
-import DigitButton from './DigitButton'
-import OperationButton from './OperationButton'
+import DigitButton from '../DigitButton'
+import OperationButton from '../OperationButton'
 
 export default ({ state, dispatch }) => {
 	const { t } = useTranslation()
 
 	return (
-		<Keypad state={state}>
+		<StyledKeypad state={state}>
 			<OperationButton operation="C" dispatch={dispatch} />
 			<DigitButton digit="7" dispatch={dispatch} />
 			<DigitButton digit="8" dispatch={dispatch} />
@@ -41,6 +41,6 @@ export default ({ state, dispatch }) => {
 				operation={t('history')}
 				dispatch={dispatch}
 			/>
-		</Keypad>
+		</StyledKeypad>
 	)
 }

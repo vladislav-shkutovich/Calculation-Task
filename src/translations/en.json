@@ -1,0 +1,17 @@
+{
+	"calculator_app": "Calculator App",
+	"home_fc": "Home(FC)",
+	"home_сс": "Home(СC)",
+	"settings": "Settings",
+	"history": "History",
+	"switch_theme": "Switch Theme",
+	"light_theme": "Light Theme",
+	"colored_theme": "Colored Theme",
+	"dark_theme": "Dark Theme",
+	"switch_language": "Switch Language",
+	"english": "English",
+	"russian": "Russian",
+	"clear_history": "Clear History",
+	"clear_history_and_result": "Clear History & Result",
+	"show_more": "Show more..."
+}

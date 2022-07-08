@@ -2,13 +2,13 @@ import React from 'react'
 
 import theme from '@/themes/themeDark'
 
-import { Loader } from './components'
+import { StyledLoader } from './styled'
 
 const LOADER_SIZE = 100
 
 export default () => {
 	return (
-		<Loader
+		<StyledLoader
 			type="Bars"
 			color={theme.colors.black}
 			height={LOADER_SIZE}

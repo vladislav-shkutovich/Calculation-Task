@@ -1,26 +1,15 @@
-export const setLocalStorage = state => {
-	localStorage.setItem(
-		'currentOperand',
-		JSON.stringify(state.currentOperand),
-	)
-	localStorage.setItem(
-		'previousOperand',
-		JSON.stringify(state.previousOperand),
-	)
-	localStorage.setItem(
-		'operation',
-		JSON.stringify(state.operation),
-	)
-	localStorage.setItem(
-		'history',
-		JSON.stringify(state.history),
-	)
+export const setLocalStorage = ({
+	history,
+	historyIsShown,
+	selectedTheme,
+}) => {
+	localStorage.setItem('history', JSON.stringify(history))
 	localStorage.setItem(
 		'historyIsShown',
-		JSON.stringify(state.historyIsShown),
+		JSON.stringify(historyIsShown),
 	)
 	localStorage.setItem(
 		'selectedTheme',
-		JSON.stringify(state.selectedTheme),
+		JSON.stringify(selectedTheme),
 	)
 }

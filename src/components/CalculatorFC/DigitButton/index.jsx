@@ -1,13 +1,13 @@
 import React from 'react'
 
-import { KeypadButton } from './components'
+import { StyledKeypadButton } from './styled'
 
 import { ACTIONS } from '@/constants'
 
 export default ({ dispatch, digit }) => {
 	// ! это всё нужно будет полностью переделать под Redux, но позже
 	return (
-		<KeypadButton
+		<StyledKeypadButton
 			onClick={() =>
 				dispatch({
 					type: ACTIONS.ADD_DIGIT,
@@ -15,6 +15,6 @@ export default ({ dispatch, digit }) => {
 				})
 			}>
 			{digit}
-		</KeypadButton>
+		</StyledKeypadButton>
 	)
 }

@@ -40,8 +40,11 @@ import themeColored from '@/themes/themeColored'
 import themeDark from '@/themes/themeDark'
 
 // Pages
+// const HomePageFC = lazy(() =>
+// 	import('../pages/Home(FC)/index.jsx'),
+// )
 const HomePageFC = lazy(() =>
-	import('@/pages/Home(FC).jsx'),
+	import('@/pages/Home(FC)/index.jsx'),
 )
 const HomePageCC = lazy(() =>
 	import('@/pages/Home(CC).jsx'),
@@ -50,27 +53,21 @@ const SettingsPage = lazy(() =>
 	import('@/pages/Settings.jsx'),
 )
 
-// ////////////////////////////////////////////////////////////////
-
 export default () => {
-	const [
-		{
-			currentOperand,
-			previousOperand,
-			operation,
-			history,
-			historyIsShown,
-			selectedTheme,
-		},
-		dispatch,
-	] = useReducer(reducer, initialState)
+	const [state, dispatch] = useReducer(
+		reducer,
+		initialState,
+	)
+
+	const { history, historyIsShown, selectedTheme } = state
 
 	useEffect(() => {
 		setLocalStorage({
 			history,
+			historyIsShown,
 			selectedTheme,
 		})
-	}, [history, selectedTheme])
+	}, [history, historyIsShown, selectedTheme])
 
 	const currentTheme =
 		selectedTheme === 'light'
@@ -89,14 +86,7 @@ export default () => {
 							path={HOME_PAGE_FC_ROUTE}
 							render={() => (
 								<HomePageFC
-									// todo move to отдельный object
-									state={{
-										currentOperand,
-										previousOperand,
-										operation,
-										history,
-										historyIsShown,
-									}}
+									state={state}
 									dispatch={dispatch}
 								/>
 							)}
@@ -106,13 +96,7 @@ export default () => {
 							path={HOME_PAGE_CC_ROUTE}
 							render={() => (
 								<HomePageCC
-									state={{
-										currentOperand,
-										previousOperand,
-										operation,
-										history,
-										historyIsShown,
-									}}
+									state={state}
 									dispatch={dispatch}
 								/>
 							)}
@@ -134,3 +118,5 @@ export default () => {
 		</ThemeProvider>
 	)
 }
+
+// * Refactored 08.07.2022 ✔
