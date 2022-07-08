@@ -12,6 +12,7 @@ export default class extends React.Component {
 	render(props) {
 		const { state, dispatch } = this.props
 
+		// todo это всё собрать в pages
 		return (
 			<Card>
 				<Display state={state} />

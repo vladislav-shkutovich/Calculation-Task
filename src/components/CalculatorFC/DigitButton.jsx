@@ -5,6 +5,7 @@ import { KeypadButton } from './components'
 import { ACTIONS } from '@/constants'
 
 export default ({ dispatch, digit }) => {
+	// ! это всё нужно будет полностью переделать под Redux, но позже
 	return (
 		<KeypadButton
 			onClick={() =>

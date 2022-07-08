@@ -8,6 +8,7 @@ import ThemeSelector from './ThemeSelector'
 import LanguageSelector from './LanguageSelector'
 import CleanerButton from './CleanerButton'
 
+// ! это всё в Settings
 export default ({ selectedTheme, dispatch }) => {
 	const { t } = useTranslation()
 

@@ -67,21 +67,10 @@ export default () => {
 
 	useEffect(() => {
 		setLocalStorage({
-			currentOperand,
-			previousOperand,
-			operation,
 			history,
-			historyIsShown,
 			selectedTheme,
 		})
-	}, [
-		currentOperand,
-		previousOperand,
-		operation,
-		history,
-		historyIsShown,
-		selectedTheme,
-	])
+	}, [history, selectedTheme])
 
 	const currentTheme =
 		selectedTheme === 'light'
@@ -100,6 +89,7 @@ export default () => {
 							path={HOME_PAGE_FC_ROUTE}
 							render={() => (
 								<HomePageFC
+									// todo move to отдельный object
 									state={{
 										currentOperand,
 										previousOperand,

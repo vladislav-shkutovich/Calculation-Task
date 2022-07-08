@@ -9,6 +9,8 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 // Temporarily leaving translations here
 // then will move it to public/locales
+
+// todo to json
 const translationEn = {
 	calculator_app: 'Calculator App',
 	home_fc: 'Home(FC)',
@@ -44,6 +46,7 @@ const translationRu = {
 	show_more: 'Показать еще...',
 }
 
+// todo to helpers
 export default i18n
 	.use(initReactI18next)
 	.use(LanguageDetector)
