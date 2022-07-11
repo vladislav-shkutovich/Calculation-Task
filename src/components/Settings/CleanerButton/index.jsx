@@ -1,18 +1,18 @@
 import React from 'react'
 
-import { CleanerButton } from './components'
+import { StyledCleanerButton } from './styled'
 
 import { ACTIONS } from '@/constants'
 
 export default ({ type, name, dispatch }) => {
 	return (
-		<CleanerButton
+		<StyledCleanerButton
 			onClick={() =>
 				dispatch({
 					type: ACTIONS[type],
 				})
 			}>
 			{name}
-		</CleanerButton>
+		</StyledCleanerButton>
 	)
 }

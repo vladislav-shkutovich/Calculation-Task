@@ -1,12 +1,7 @@
 export const initialState = {
-	// currentOperand:
-	// 	JSON.parse(localStorage.getItem('currentOperand')) ||
-	// 	null,
-	// previousOperand:
-	// 	JSON.parse(localStorage.getItem('previousOperand')) ||
-	// 	null,
-	// operation:
-	// 	JSON.parse(localStorage.getItem('operation')) || null,
+	currentOperand: null,
+	previousOperand: null,
+	operation: null,
 	history:
 		JSON.parse(localStorage.getItem('history')) || [],
 	historyIsShown:

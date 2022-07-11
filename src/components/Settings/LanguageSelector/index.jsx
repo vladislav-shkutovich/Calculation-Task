@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Dropdown } from './components'
+import { StyledDropdown } from './styled'
 
 import { useTranslation } from 'react-i18next'
 
@@ -15,11 +15,11 @@ export default ({ selectedTheme, dispatch }) => {
 	).slice(1, -1)
 
 	return (
-		<Dropdown
+		<StyledDropdown
 			defaultValue={languageByDefault}
 			onChange={handleLanguage}>
 			<option value="en">{t('english')}</option>
 			<option value="ru-RU">{t('russian')}</option>
-		</Dropdown>
+		</StyledDropdown>
 	)
 }

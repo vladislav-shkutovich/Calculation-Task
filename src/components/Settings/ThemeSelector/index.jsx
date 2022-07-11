@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useTranslation } from 'react-i18next'
 
-import { Dropdown } from './components'
+import { StyledDropdown } from './styled'
 
 import { ACTIONS } from '@/constants'
 
@@ -17,12 +17,12 @@ export default ({ selectedTheme, dispatch }) => {
 	}
 
 	return (
-		<Dropdown
+		<StyledDropdown
 			defaultValue={selectedTheme}
 			onChange={selectTheme}>
 			<option value="light">{t('light_theme')}</option>
 			<option value="colored">{t('colored_theme')}</option>
 			<option value="dark">{t('dark_theme')}</option>
-		</Dropdown>
+		</StyledDropdown>
 	)
 }

@@ -39,18 +39,14 @@ import themeLight from '@/themes/themeLight'
 import themeColored from '@/themes/themeColored'
 import themeDark from '@/themes/themeDark'
 
-// Pages
-// const HomePageFC = lazy(() =>
-// 	import('../pages/Home(FC)/index.jsx'),
-// )
 const HomePageFC = lazy(() =>
 	import('@/pages/Home(FC)/index.jsx'),
 )
 const HomePageCC = lazy(() =>
-	import('@/pages/Home(CC).jsx'),
+	import('@/pages/Home(CC)/index.jsx'),
 )
 const SettingsPage = lazy(() =>
-	import('@/pages/Settings.jsx'),
+	import('@/pages/Settings/index.jsx'),
 )
 
 export default () => {
