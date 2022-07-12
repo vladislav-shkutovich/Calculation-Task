@@ -1,4 +1,5 @@
 import { evaluate as mathjsEvaluate } from 'mathjs'
+// TODO переделать на паттерн команда
 
 function format(stringValue) {
 	return Number.isInteger(stringValue)

@@ -65,12 +65,18 @@ export default () => {
 		})
 	}, [history, historyIsShown, selectedTheme])
 
-	const currentTheme =
-		selectedTheme === 'light'
-			? themeLight
-			: selectedTheme === 'colored'
-			? themeColored
-			: themeDark
+	let currentTheme
+	switch (selectedTheme) {
+		case 'light':
+			currentTheme = themeLight
+			break
+		case 'colored':
+			currentTheme = themeColored
+			break
+		default:
+			currentTheme = themeDark
+			break
+	}
 
 	return (
 		<ThemeProvider theme={currentTheme}>

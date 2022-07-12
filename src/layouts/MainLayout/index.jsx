@@ -1,12 +1,10 @@
 import React from 'react'
 
-import { PageLayout, Card } from '@/layouts'
+import { PageLayout, Card } from './styled'
 
 import Header from '@/components/Header'
 
-// todo это общий layout для всех страниц
-// то же самое с Card
-export const MainLayout = children => {
+export const MainLayout = ({ children }) => {
 	return (
 		<PageLayout>
 			<Card>

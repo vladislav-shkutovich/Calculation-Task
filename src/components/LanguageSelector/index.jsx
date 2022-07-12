@@ -14,6 +14,7 @@ export default ({ selectedTheme, dispatch }) => {
 		localStorage.getItem('i18nextLng'),
 	).slice(1, -1)
 
+	// todo .map() для двух объектов со значениями для языка и тем
 	return (
 		<StyledDropdown
 			defaultValue={languageByDefault}
