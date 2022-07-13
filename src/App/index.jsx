@@ -15,7 +15,7 @@ import {
 	Redirect,
 } from 'react-router-dom'
 
-// Constants for routes and initial state
+// Constants
 import {
 	HOME_PAGE_FC_ROUTE,
 	HOME_PAGE_CC_ROUTE,
@@ -34,6 +34,7 @@ import themeLight from '@/themes/themeLight'
 import themeColored from '@/themes/themeColored'
 import themeDark from '@/themes/themeDark'
 
+// Lazy loading pages
 const HomePageFC = lazy(() =>
 	import('@/pages/Home(FC)/index.jsx'),
 )
@@ -44,16 +45,25 @@ const SettingsPage = lazy(() =>
 	import('@/pages/Settings/index.jsx'),
 )
 
+// Main application component
 export default () => {
-	const store = useSelector(store => store)
-	console.clear()
-	console.log(store)
+	/*
+	// ? Способ с деструктуризацией
+	const {
+		history = [],
+		historyIsShown = false,
+		selectedTheme = 'dark',
+	} = useSelector(store => store)
+	*/
 
-	const history = useSelector(store => store?.history) || []
-	const historyIsShown =
-		useSelector(store => store?.historyIsShown) || false
-	const selectedTheme =
-		useSelector(store => store?.selectedTheme) || 'dark'
+	// ? Способ, аналогичный нескольким вызовам useState
+	const history = useSelector(store => store.history)
+	const historyIsShown = useSelector(
+		store => store.historyIsShown,
+	)
+	const selectedTheme = useSelector(
+		store => store.selectedTheme,
+	)
 
 	useEffect(() => {
 		setLocalStorage({

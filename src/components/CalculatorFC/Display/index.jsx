@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { useSelector } from 'react-redux'
-
 import { StyledDisplay } from './styled'
 
 export default () => {
@@ -10,12 +8,12 @@ export default () => {
 	return (
 		<StyledDisplay state={store}>
 			<div className="background-values">
-				{store?.previousOperand}
-				{store?.operation}
+				{store.previousOperand}
+				{store.operation}
 			</div>
 
 			<div className="front-values">
-				{store?.currentOperand}
+				{store.currentOperand}
 			</div>
 		</StyledDisplay>
 	)

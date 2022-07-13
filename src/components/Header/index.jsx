@@ -1,7 +1,5 @@
 import React from 'react'
-
 import { useTranslation } from 'react-i18next'
-
 import theme from '@/themes/themeColored'
 import { StyledHeader, Heading, Anchor } from './styled'
 import {
@@ -9,7 +7,6 @@ import {
 	HOME_PAGE_CC_ROUTE,
 	SETTINGS_PAGE_ROUTE,
 } from '@/constants'
-
 import { Link } from 'react-router-dom'
 
 export default () => {

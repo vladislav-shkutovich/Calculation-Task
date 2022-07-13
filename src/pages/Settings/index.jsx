@@ -1,14 +1,11 @@
 import React from 'react'
-
 import { useTranslation } from 'react-i18next'
-
 import { MainLayout } from '@/layouts/MainLayout'
 import {
 	StyledSettings,
 	Heading,
 	Description,
 } from './styled'
-
 import Selector from '@/components/Selector'
 import CleanerButton from '@/components/CleanerButton'
 

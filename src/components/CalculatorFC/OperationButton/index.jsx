@@ -1,19 +1,16 @@
 import React from 'react'
-
 import { useDispatch } from 'react-redux'
-
 import {
 	StyledAdditionalButton,
 	StyledKeypadButton,
 	StyledHistoryButton,
 } from './styled'
-
 import { ACTIONS } from '@/constants'
 
 export default ({ operation }) => {
 	const dispatch = useDispatch()
-	let currentOperation
 
+	let currentOperation
 	switch (operation) {
 		case '(':
 			currentOperation = ACTIONS.ADD_BRACKET

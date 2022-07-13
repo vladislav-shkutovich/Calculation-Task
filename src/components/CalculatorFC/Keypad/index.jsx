@@ -1,21 +1,19 @@
 import React from 'react'
-
 import { useSelector } from 'react-redux'
-
 import { useTranslation } from 'react-i18next'
-
 import { StyledKeypad } from './styled'
-
 import DigitButton from '../DigitButton'
 import OperationButton from '../OperationButton'
 
 export default () => {
-	const store = useSelector(store => store)
+	const historyIsShown = useSelector(
+		store => store.historyIsShown,
+	)
 
 	const { t } = useTranslation()
 
 	return (
-		<StyledKeypad state={store}>
+		<StyledKeypad historyIsShown={historyIsShown}>
 			<OperationButton operation="C" />
 			<DigitButton digit="7" />
 			<DigitButton digit="8" />

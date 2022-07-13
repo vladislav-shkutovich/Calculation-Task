@@ -9,11 +9,8 @@ export const StyledKeypad = styled.div`
 	grid-row-gap: 5px;
 	grid-column-gap: 10px;
 
-	/* grid-area: 2 / 1 / 3 / 2; */
-	/* grid-area: 2 / 1 / 3 / 3; */
-
-	grid-area: ${({ state }) => {
-		return state?.historyIsShown
+	grid-area: ${({ historyIsShown }) => {
+		return historyIsShown
 			? '2 / 1 / 3 / 2'
 			: '2 / 1 / 3 / 3'
 	}};
@@ -27,8 +24,6 @@ export const StyledKeypad = styled.div`
 	margin: 5px 5px 20px 20px;
 
 	& > * {
-		/* width: 60%; */
-		/* height: 60%; */
 		width: 100px;
 		height: 80px;
 

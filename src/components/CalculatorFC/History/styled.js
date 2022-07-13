@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const StyledHistory = styled.div`
 	display: grid;
-	/* display: none; */
 	grid-area: 1 / 2 / 3 / 3;
 	align-content: flex-start;
 	margin: 20px 20px 20px 5px;

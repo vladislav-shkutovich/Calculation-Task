@@ -3,8 +3,6 @@ import styled from 'styled-components'
 export const StyledDisplay = styled.div`
 	display: grid;
 	height: 120px;
-	/* grid-area: 1 / 1 / 2 / 2; */
-	/* grid-area: 1 / 1 / 2 / 3; */
 
 	grid-area: ${({ state }) => {
 		return state?.historyIsShown

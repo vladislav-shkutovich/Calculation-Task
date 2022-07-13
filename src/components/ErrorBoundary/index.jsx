@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Message } from './styled'
 
 export default class ErrorBoundary extends React.Component {

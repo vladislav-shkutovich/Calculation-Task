@@ -1,9 +1,6 @@
 import React from 'react'
-
 import { useDispatch } from 'react-redux'
-
 import { StyledCleanerButton } from './styled'
-
 import { ACTIONS } from '@/constants'
 
 export default ({ type, name }) => {
