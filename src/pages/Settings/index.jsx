@@ -9,8 +9,7 @@ import {
 	Description,
 } from './styled'
 
-import ThemeSelector from '@/components/ThemeSelector'
-import LanguageSelector from '@/components/LanguageSelector'
+import Selector from '@/components/Selector'
 import CleanerButton from '@/components/CleanerButton'
 
 export default ({ selectedTheme, dispatch }) => {
@@ -22,15 +21,16 @@ export default ({ selectedTheme, dispatch }) => {
 				<Heading>{t('settings')}</Heading>
 
 				<Description>{t('switch_theme')}</Description>
-				<ThemeSelector
+				<Selector
 					selectedTheme={selectedTheme}
 					dispatch={dispatch}
+					selectionType="theme"
 				/>
 
 				<Description>{t('switch_language')}</Description>
-				<LanguageSelector
-					selectedTheme={selectedTheme}
+				<Selector
 					dispatch={dispatch}
+					selectionType="language"
 				/>
 
 				<CleanerButton
