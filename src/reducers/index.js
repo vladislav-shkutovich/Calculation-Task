@@ -1,7 +1,10 @@
-import { ACTIONS } from '@/constants'
+import { ACTIONS, initialState } from '@/constants'
 import { evaluate } from '@/helpers'
 
-export function reducer(state, { type, payload }) {
+export function reducer(
+	state = initialState,
+	{ type, payload },
+) {
 	switch (type) {
 		case ACTIONS.ADD_DIGIT:
 			if (
@@ -174,5 +177,8 @@ export function reducer(state, { type, payload }) {
 				...state,
 				selectedTheme: payload,
 			}
+
+		default:
+			return { ...state }
 	}
 }

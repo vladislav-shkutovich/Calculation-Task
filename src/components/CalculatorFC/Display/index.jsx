@@ -1,17 +1,21 @@
 import React from 'react'
 
+import { useSelector } from 'react-redux'
+
 import { StyledDisplay } from './styled'
 
-export default ({ state }) => {
+export default () => {
+	const store = useSelector(store => store)
+
 	return (
-		<StyledDisplay state={state}>
+		<StyledDisplay state={store}>
 			<div className="background-values">
-				{state.previousOperand}
-				{state.operation}
+				{store?.previousOperand}
+				{store?.operation}
 			</div>
 
 			<div className="front-values">
-				{state.currentOperand}
+				{store?.currentOperand}
 			</div>
 		</StyledDisplay>
 	)

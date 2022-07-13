@@ -1,9 +1,8 @@
-import React, {
-	useReducer,
-	useEffect,
-	lazy,
-	Suspense,
-} from 'react'
+// React
+import React, { useEffect, lazy, Suspense } from 'react'
+
+// Redux
+import { useSelector } from 'react-redux'
 
 // Components
 import Loader from '@/components/Loader'
@@ -21,11 +20,7 @@ import {
 	HOME_PAGE_FC_ROUTE,
 	HOME_PAGE_CC_ROUTE,
 	SETTINGS_PAGE_ROUTE,
-	initialState,
 } from '@/constants'
-
-// Reducers
-import { reducer } from '@/reducers'
 
 // Helpers
 import { setLocalStorage } from '@/helpers'
@@ -50,12 +45,15 @@ const SettingsPage = lazy(() =>
 )
 
 export default () => {
-	const [state, dispatch] = useReducer(
-		reducer,
-		initialState,
-	)
+	const store = useSelector(store => store)
+	console.clear()
+	console.log(store)
 
-	const { history, historyIsShown, selectedTheme } = state
+	const history = useSelector(store => store?.history) || []
+	const historyIsShown =
+		useSelector(store => store?.historyIsShown) || false
+	const selectedTheme =
+		useSelector(store => store?.selectedTheme) || 'dark'
 
 	useEffect(() => {
 		setLocalStorage({
@@ -86,31 +84,16 @@ export default () => {
 						<Route
 							exact
 							path={HOME_PAGE_FC_ROUTE}
-							render={() => (
-								<HomePageFC
-									state={state}
-									dispatch={dispatch}
-								/>
-							)}
+							render={() => <HomePageFC />}
 						/>
 						<Route
 							exact
 							path={HOME_PAGE_CC_ROUTE}
-							render={() => (
-								<HomePageCC
-									state={state}
-									dispatch={dispatch}
-								/>
-							)}
+							render={() => <HomePageCC />}
 						/>
 						<Route
 							path={SETTINGS_PAGE_ROUTE}
-							render={() => (
-								<SettingsPage
-									selectedTheme={selectedTheme}
-									dispatch={dispatch}
-								/>
-							)}
+							render={() => <SettingsPage />}
 						/>
 						<Redirect to={HOME_PAGE_FC_ROUTE} />
 					</Switch>
@@ -120,5 +103,3 @@ export default () => {
 		</ThemeProvider>
 	)
 }
-
-// * Refactored 08.07.2022 ✔

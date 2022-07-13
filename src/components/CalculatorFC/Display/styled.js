@@ -7,7 +7,7 @@ export const StyledDisplay = styled.div`
 	/* grid-area: 1 / 1 / 2 / 3; */
 
 	grid-area: ${({ state }) => {
-		return state.historyIsShown
+		return state?.historyIsShown
 			? '1 / 1 / 2 / 2'
 			: '1 / 1 / 2 / 3'
 	}};

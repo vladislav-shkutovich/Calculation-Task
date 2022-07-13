@@ -1,7 +1,4 @@
 export const initialState = {
-	currentOperand: null,
-	previousOperand: null,
-	operation: null,
 	history:
 		JSON.parse(localStorage.getItem('history')) || [],
 	historyIsShown:
@@ -10,4 +7,16 @@ export const initialState = {
 	selectedTheme:
 		JSON.parse(localStorage.getItem('selectedTheme')) ||
 		'dark',
+	currentOperand: null,
+	previousOperand: null,
+	operation: null,
 }
+
+// export const initialState = {
+// 	currentOperand: null,
+// 	previousOperand: null,
+// 	operation: null,
+// 	history: [],
+// 	historyIsShown: false,
+// 	selectedTheme: 'dark',
+// }

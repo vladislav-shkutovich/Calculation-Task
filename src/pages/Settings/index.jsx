@@ -12,7 +12,7 @@ import {
 import Selector from '@/components/Selector'
 import CleanerButton from '@/components/CleanerButton'
 
-export default ({ selectedTheme, dispatch }) => {
+export default () => {
 	const { t } = useTranslation()
 
 	return (
@@ -21,28 +21,19 @@ export default ({ selectedTheme, dispatch }) => {
 				<Heading>{t('settings')}</Heading>
 
 				<Description>{t('switch_theme')}</Description>
-				<Selector
-					selectedTheme={selectedTheme}
-					dispatch={dispatch}
-					selectionType="theme"
-				/>
+				<Selector selectionType="theme" />
 
 				<Description>{t('switch_language')}</Description>
-				<Selector
-					dispatch={dispatch}
-					selectionType="language"
-				/>
+				<Selector selectionType="language" />
 
 				<CleanerButton
 					type="CLEAR_HISTORY"
 					name={t('clear_history')}
-					dispatch={dispatch}
 				/>
 
 				<CleanerButton
 					type="CLEAR_HISTORY_AND_RESULT"
 					name={t('clear_history_and_result')}
-					dispatch={dispatch}
 				/>
 			</StyledSettings>
 		</MainLayout>

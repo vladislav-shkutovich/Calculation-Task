@@ -1,13 +1,12 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { StyledDropdown } from './styled'
 import { ACTIONS, languages, themes } from '@/constants'
 
-export default ({
-	dispatch,
-	selectionType,
-	selectedTheme,
-}) => {
+export default ({ selectionType }) => {
+	const dispatch = useDispatch()
+	const store = useSelector(store => store)
 	const { i18n, t } = useTranslation()
 
 	let selectionOptions,
@@ -18,7 +17,7 @@ export default ({
 		case 'theme':
 			selectionOptions = themes
 
-			selectionDefaultValue = selectedTheme
+			selectionDefaultValue = store?.selectedTheme
 
 			handleSelection = event => {
 				dispatch({

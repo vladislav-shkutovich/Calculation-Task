@@ -13,7 +13,7 @@ export const StyledKeypad = styled.div`
 	/* grid-area: 2 / 1 / 3 / 3; */
 
 	grid-area: ${({ state }) => {
-		return state.historyIsShown
+		return state?.historyIsShown
 			? '2 / 1 / 3 / 2'
 			: '2 / 1 / 3 / 3'
 	}};

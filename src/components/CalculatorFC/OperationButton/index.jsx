@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useDispatch } from 'react-redux'
+
 import {
 	StyledAdditionalButton,
 	StyledKeypadButton,
@@ -8,7 +10,8 @@ import {
 
 import { ACTIONS } from '@/constants'
 
-export default ({ dispatch, operation }) => {
+export default ({ operation }) => {
+	const dispatch = useDispatch()
 	let currentOperation
 
 	switch (operation) {

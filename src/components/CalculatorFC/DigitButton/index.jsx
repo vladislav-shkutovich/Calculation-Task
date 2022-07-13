@@ -1,11 +1,14 @@
 import React from 'react'
 
+import { useDispatch } from 'react-redux'
+
 import { StyledKeypadButton } from './styled'
 
 import { ACTIONS } from '@/constants'
 
-export default ({ dispatch, digit }) => {
-	// ! это всё нужно будет полностью переделать под Redux, но позже
+export default ({ digit }) => {
+	const dispatch = useDispatch()
+
 	return (
 		<StyledKeypadButton
 			onClick={() =>

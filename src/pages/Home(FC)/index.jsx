@@ -8,19 +8,16 @@ import Display from '@/components/CalculatorFC/Display'
 import History from '@/components/CalculatorFC/History'
 import Keypad from '@/components/CalculatorFC/Keypad'
 
-export default ({ state, dispatch }) => {
+export default () => {
 	return (
 		<MainLayout>
 			<StyledCalculator>
-				<Display state={state} />
+				<Display />
 
-				<Keypad dispatch={dispatch} state={state} />
+				<Keypad />
 
 				<ErrorBoundary>
-					<History
-						history={state?.history}
-						historyIsShown={state.historyIsShown}
-					/>
+					<History />
 				</ErrorBoundary>
 			</StyledCalculator>
 		</MainLayout>
