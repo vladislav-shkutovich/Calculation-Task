@@ -1,18 +1,17 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 import {
-	AdditionalButton,
-	KeypadButton,
-	HistoryButton,
-} from './components'
-
+	StyledAdditionalButton,
+	StyledKeypadButton,
+	StyledHistoryButton,
+} from './styled'
 import { ACTIONS } from '@/constants'
 
-export default class extends React.Component {
+class OperationButton extends React.Component {
 	render(props) {
-		const { dispatch, operation } = this.props
-		let currentOperation
+		const { addOperation, operation } = this.props
 
+		let currentOperation
 		switch (operation) {
 			case '(':
 				currentOperation = ACTIONS.ADD_BRACKET
@@ -43,36 +42,42 @@ export default class extends React.Component {
 		}
 
 		return operation === '+/-' || operation === '%' ? (
-			<AdditionalButton
+			<StyledAdditionalButton
 				onClick={() =>
-					dispatch({
-						type: currentOperation,
-						payload: { operation },
-					})
+					addOperation(currentOperation, operation)
 				}>
 				{operation}
-			</AdditionalButton>
+			</StyledAdditionalButton>
 		) : operation === 'History' ||
 		  operation === 'История' ? (
-			<HistoryButton
+			<StyledHistoryButton
 				onClick={() =>
-					dispatch({
-						type: currentOperation,
-						payload: { operation },
-					})
+					addOperation(currentOperation, operation)
 				}>
 				{operation}
-			</HistoryButton>
+			</StyledHistoryButton>
 		) : (
-			<KeypadButton
+			<StyledKeypadButton
 				onClick={() =>
-					dispatch({
-						type: currentOperation,
-						payload: { operation },
-					})
+					addOperation(currentOperation, operation)
 				}>
 				{operation}
-			</KeypadButton>
+			</StyledKeypadButton>
 		)
 	}
 }
+
+const mapDispatchToProps = dispatch => {
+	return {
+		addOperation: (currentOperation, operation) =>
+			dispatch({
+				type: currentOperation,
+				payload: { operation },
+			}),
+	}
+}
+
+export default connect(
+	null,
+	mapDispatchToProps,
+)(OperationButton)

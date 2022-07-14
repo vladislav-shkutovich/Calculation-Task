@@ -1,12 +1,10 @@
 import React from 'react'
-
+import { connect } from 'react-redux'
 import i18n from 'i18next'
+import { StyledHistory } from './styled'
+import ShowMoreButton from '../ShowMoreButton'
 
-import { History } from './components'
-
-import ShowMoreButton from './ShowMoreButton'
-
-export default class extends React.Component {
+class History extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -30,7 +28,7 @@ export default class extends React.Component {
 		} = this.state
 
 		return historyIsShown ? (
-			<History>
+			<StyledHistory>
 				<p>{i18n.t('history')}</p>
 				<ul>
 					{history
@@ -42,12 +40,21 @@ export default class extends React.Component {
 							<li key={i}>{el}</li>
 						))}
 				</ul>
-				{history?.length > 3 && !buttonIsHidden && (
+				{history.length > 3 && !buttonIsHidden && (
 					<ShowMoreButton
 						handleShowMore={this.showFullHistoryHandler}
 					/>
 				)}
-			</History>
+			</StyledHistory>
 		) : null
 	}
 }
+
+const mapStateToProps = state => {
+	return {
+		history: state.history,
+		historyIsShown: state.historyIsShown,
+	}
+}
+
+export default connect(mapStateToProps)(History)

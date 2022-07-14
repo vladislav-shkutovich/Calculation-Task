@@ -1,13 +1,25 @@
 import React from 'react'
 
+import { StyledCalculator } from './styled'
+
 import { MainLayout } from '@/layouts/MainLayout'
+import ErrorBoundary from '@/components/ErrorBoundary'
+import Display from '@/components/CalculatorCC/Display'
+import History from '@/components/CalculatorCC/History'
+import Keypad from '@/components/CalculatorCC/Keypad'
 
-import CalculatorCC from '@/components/CalculatorСС'
-
-export default ({ state, dispatch }) => {
+export default () => {
 	return (
 		<MainLayout>
-			<CalculatorCC state={state} dispatch={dispatch} />
+			<StyledCalculator>
+				<Display />
+
+				<Keypad />
+
+				<ErrorBoundary>
+					<History />
+				</ErrorBoundary>
+			</StyledCalculator>
 		</MainLayout>
 	)
 }
