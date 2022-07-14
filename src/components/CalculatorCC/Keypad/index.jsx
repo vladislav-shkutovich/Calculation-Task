@@ -9,10 +9,11 @@ class Keypad extends React.Component {
 	render(props) {
 		const { historyIsShown } = this.props
 
+		// todo сделать через map() как селектор
 		return (
 			<StyledKeypad historyIsShown={historyIsShown}>
 				<OperationButton operation="C" />
-				<DigitButton digit="7" />
+				<DigitButton type="тип" digit="7" />
 				<DigitButton digit="8" />
 				<DigitButton digit="9" />
 				<OperationButton operation="*" />

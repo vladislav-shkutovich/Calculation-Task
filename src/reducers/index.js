@@ -105,6 +105,7 @@ export function reducer(
 
 			return {
 				...state,
+				// previousOperand: calculator.execute(new AddCommand(100))
 				previousOperand:
 					state.previousOperand +
 					state.operation +

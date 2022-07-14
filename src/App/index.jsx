@@ -47,16 +47,6 @@ const SettingsPage = lazy(() =>
 
 // Main application component
 export default () => {
-	/*
-	// ? Способ с деструктуризацией
-	const {
-		history = [],
-		historyIsShown = false,
-		selectedTheme = 'dark',
-	} = useSelector(store => store)
-	*/
-
-	// ? Способ, аналогичный нескольким вызовам useState
 	const history = useSelector(store => store.history)
 	const historyIsShown = useSelector(
 		store => store.historyIsShown,
