@@ -111,7 +111,7 @@ export function reducer(
 					state.currentOperand,
 				operation: payload.operation,
 				// currentOperand: evaluate(state),
-				currentOperand: evaluate(state),
+				currentOperand: evaluate(state).formattedResult,
 				overwrite: true,
 			}
 
@@ -139,8 +139,8 @@ export function reducer(
 				previousOperand: null,
 				operation: null,
 				// currentOperand: evaluate(state),
-				currentOperand: evaluate(state),
-				// history: evaluate(state),
+				currentOperand: evaluate(state).formattedResult,
+				history: evaluate(state).updateHistory(),
 			}
 
 		case ACTIONS.CLEAR:

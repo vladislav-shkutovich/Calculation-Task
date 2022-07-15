@@ -2,8 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { StyledKeypad } from './styled'
-import DigitButton from '../DigitButton'
-import OperationButton from '../OperationButton'
+import DigitButton from '@/components/CalculatorFC/DigitButton'
+import OperationButton from '@/components/CalculatorFC/OperationButton'
+import { keypadButtons } from '@/constants'
 
 export default () => {
 	const historyIsShown = useSelector(
@@ -14,29 +15,29 @@ export default () => {
 
 	return (
 		<StyledKeypad historyIsShown={historyIsShown}>
-			<OperationButton operation="C" />
-			<DigitButton digit="7" />
-			<DigitButton digit="8" />
-			<DigitButton digit="9" />
-			<OperationButton operation="*" />
-			<OperationButton operation="-" />
-			<DigitButton digit="4" />
-			<DigitButton digit="5" />
-			<DigitButton digit="6" />
-			<OperationButton operation="/" />
-			<OperationButton operation="+" />
-			<DigitButton digit="1" />
-			<DigitButton digit="2" />
-			<DigitButton digit="3" />
-			<OperationButton operation="=" />
-			<DigitButton digit="." />
-			<OperationButton operation="(" />
-			<DigitButton digit="0" />
-			<OperationButton operation=")" />
-			<OperationButton operation="CE" />
-			<OperationButton operation="+/-" />
-			<OperationButton operation="%" />
-			<OperationButton operation={t('history')} />
+			{Object.values(keypadButtons).map(el => {
+				switch (el.type) {
+					case 'digit':
+						return (
+							<DigitButton
+								key={el.value}
+								digit={el.value}
+							/>
+						)
+
+					case 'operation':
+						return (
+							<OperationButton
+								key={el.value}
+								operation={
+									el.value === 'history'
+										? t(el.value)
+										: el.value
+								}
+							/>
+						)
+				}
+			})}
 		</StyledKeypad>
 	)
 }

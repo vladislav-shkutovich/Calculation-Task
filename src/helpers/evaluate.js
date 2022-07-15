@@ -45,7 +45,7 @@ function format(str) {
 
 const Calculator = function() {
 	let current = 0
-	const commands = []
+	let commands = []
 
 	return {
 		execute: function(command) {
@@ -59,6 +59,9 @@ const Calculator = function() {
 		getCommands: function() {
 			return commands
 		},
+		clearCommands: function() {
+			commands = []
+		},
 	}
 }
 
@@ -70,11 +73,10 @@ export function evaluate({
 	currentOperand,
 	history,
 }) {
-	console.log(history)
 	// Guard for case when current = 0
 	if (calculator.getCommands().length === 0)
 		calculator.execute(new AddCommand(previousOperand))
-	// Guard for case with empty history array
+	// // Guard for case with empty history array
 	const updatedHistory =
 		history === undefined ? [] : [...history]
 	// Part of string expression for history component
@@ -86,26 +88,37 @@ export function evaluate({
 	switch (operation) {
 		case '+':
 			calculator.execute(new AddCommand(currentOperand))
-			return result()
+			break
 		case '-':
 			calculator.execute(new SubCommand(currentOperand))
-			return result()
+			break
 		case '*':
 			calculator.execute(new MulCommand(currentOperand))
-			return result()
+			break
 		case '/':
 			calculator.execute(new DivCommand(currentOperand))
-			return result()
+			break
 		case '%':
 			calculator.execute(
 				new RemainderCommand(currentOperand),
 			)
-			return result()
+			break
 	}
 
-	// updatedHistory.push(calculation + ' = ' + result())
+	const formattedResult = format(result())
+	console.log(formattedResult)
+	// updatedHistory.push(calculation + ' = ' + formattedResult)
 
-	return result()
+	const updateHistory = () => {
+		// updatedHistory.push(
+		// 	calculation + ' = ' + formattedResult,
+		// )
+		updatedHistory.push(calculation)
+		console.log(formattedResult)
+		return updatedHistory
+	}
+
+	return { formattedResult, updateHistory }
 }
 
 // Test
