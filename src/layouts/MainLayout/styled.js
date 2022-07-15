@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const PageLayout = styled.div`
 	width: 100%;
-	height: 100%;
+	max-height: 100%;
+	height: 770px;
 
-	max-width: 1280px;
-	max-height: 100vh;
+	max-width: 900px;
 
 	padding: ${({ theme }) => theme.spaces[4]}px;
 	margin: 0 auto;

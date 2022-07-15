@@ -4,9 +4,10 @@ export const StyledKeypad = styled.div`
 	display: grid;
 
 	max-width: 675px;
+	max-height: 675px;
 	align-items: center;
 	justify-self: center;
-	grid-row-gap: 5px;
+	grid-row-gap: 10px;
 	grid-column-gap: 10px;
 
 	grid-area: ${({ historyIsShown }) => {
@@ -15,7 +16,7 @@ export const StyledKeypad = styled.div`
 			: '2 / 1 / 3 / 3'
 	}};
 
-	grid-template-rows: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 80px);
 	grid-template-columns: repeat(5, 1fr);
 
 	justify-items: center;
