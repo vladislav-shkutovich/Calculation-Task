@@ -30,13 +30,13 @@ export default () => {
 				{store.history
 					?.slice(
 						0,
-						fullHistoryIsShown ? store.history.length : 3,
+						fullHistoryIsShown ? store.history?.length : 3,
 					)
 					.map((el, i) => (
 						<li key={i}>{el}</li>
 					))}
 			</ul>
-			{store.history.length > 3 && !buttonIsHidden && (
+			{store.history?.length > 3 && !buttonIsHidden && (
 				<ShowMoreButton
 					handleShowMore={showFullHistoryHandler}
 				/>

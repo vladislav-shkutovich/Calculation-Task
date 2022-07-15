@@ -7,7 +7,7 @@ const selectedTheme = JSON.parse(
 )
 
 export const initialState = {
-	history: history || [],
+	history: history || ['1+1=2', '2+2=4'],
 	historyIsShown: historyIsShown || false,
 	selectedTheme: selectedTheme || 'dark',
 	currentOperand: null,

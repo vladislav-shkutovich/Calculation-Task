@@ -105,13 +105,13 @@ export function reducer(
 
 			return {
 				...state,
-				// previousOperand: calculator.execute(new AddCommand(100))
 				previousOperand:
 					state.previousOperand +
 					state.operation +
 					state.currentOperand,
 				operation: payload.operation,
-				currentOperand: evaluate(state).formattedResult,
+				// currentOperand: evaluate(state),
+				currentOperand: evaluate(state),
 				overwrite: true,
 			}
 
@@ -138,8 +138,9 @@ export function reducer(
 				overwrite: true,
 				previousOperand: null,
 				operation: null,
-				currentOperand: evaluate(state).formattedResult,
-				history: evaluate(state).updatedHistory,
+				// currentOperand: evaluate(state),
+				currentOperand: evaluate(state),
+				// history: evaluate(state),
 			}
 
 		case ACTIONS.CLEAR:
