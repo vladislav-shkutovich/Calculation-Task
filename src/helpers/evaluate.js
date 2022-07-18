@@ -48,19 +48,20 @@ const Calculator = function() {
 	let commands = []
 
 	return {
-		execute: function(command) {
+		execute(command) {
 			current = command.execute(current, command.value)
 			commands.push(command)
 		},
 
-		getCurrentValue: function() {
+		getCurrentValue() {
 			return current
 		},
-		getCommands: function() {
+		getCommands() {
 			return commands
 		},
-		clearCommands: function() {
+		clearCommands() {
 			commands = []
+			current = 0
 		},
 	}
 }
@@ -71,17 +72,21 @@ export function evaluate({
 	previousOperand,
 	operation,
 	currentOperand,
-	history,
+	history = [],
 }) {
 	// Guard for case when current = 0
-	if (calculator.getCommands().length === 0)
+	if (calculator.getCommands().length === 0) {
 		calculator.execute(new AddCommand(previousOperand))
-	// // Guard for case with empty history array
+	}
+
+	// Guard for case with empty history array
 	const updatedHistory =
 		history === undefined ? [] : [...history]
+
 	// Part of string expression for history component
 	const calculation =
 		previousOperand + operation + currentOperand
+
 	// Declaring result for display component
 	const result = calculator.getCurrentValue
 
@@ -106,27 +111,12 @@ export function evaluate({
 	}
 
 	const formattedResult = format(result())
-	console.log(formattedResult)
-	// updatedHistory.push(calculation + ' = ' + formattedResult)
 
-	const updateHistory = () => {
-		// updatedHistory.push(
-		// 	calculation + ' = ' + formattedResult,
-		// )
-		updatedHistory.push(calculation)
-		console.log(formattedResult)
-		return updatedHistory
-	}
+	updatedHistory.push(calculation + ' = ' + formattedResult)
 
-	return { formattedResult, updateHistory }
+	return { formattedResult, updatedHistory }
 }
 
-// Test
-// /*
-// calculator.execute(new AddCommand(100))
-// calculator.execute(new SubCommand(24))
-// calculator.execute(new MulCommand(6))
-// calculator.execute(new DivCommand(2.7))
-
-// console.log('\nValue: ' + calculator.getCurrentValue())
-// */
+export function resetCommands() {
+	calculator.clearCommands()
+}

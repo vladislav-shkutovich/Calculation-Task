@@ -1,5 +1,5 @@
 import { ACTIONS, initialState } from '@/constants'
-import { evaluate } from '@/helpers'
+import { evaluate, resetCommands } from '@/helpers'
 
 export function reducer(
 	state = initialState,
@@ -110,7 +110,6 @@ export function reducer(
 					state.operation +
 					state.currentOperand,
 				operation: payload.operation,
-				// currentOperand: evaluate(state),
 				currentOperand: evaluate(state).formattedResult,
 				overwrite: true,
 			}
@@ -133,17 +132,22 @@ export function reducer(
 				return state
 			}
 
+			// eslint-disable-next-line no-case-declarations
+			const { formattedResult, updatedHistory } = evaluate(
+				state,
+			)
+
 			return {
 				...state,
 				overwrite: true,
 				previousOperand: null,
 				operation: null,
-				// currentOperand: evaluate(state),
-				currentOperand: evaluate(state).formattedResult,
-				history: evaluate(state).updateHistory(),
+				currentOperand: formattedResult,
+				history: updatedHistory,
 			}
 
 		case ACTIONS.CLEAR:
+			resetCommands()
 			return {
 				...state,
 				overwrite: true,
@@ -165,6 +169,7 @@ export function reducer(
 			}
 
 		case ACTIONS.CLEAR_HISTORY_AND_RESULT:
+			resetCommands()
 			return {
 				...state,
 				overwrite: true,
