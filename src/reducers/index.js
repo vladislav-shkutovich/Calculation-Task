@@ -136,6 +136,7 @@ export function reducer(
 			const { formattedResult, updatedHistory } = evaluate(
 				state,
 			)
+			resetCommands()
 
 			return {
 				...state,
