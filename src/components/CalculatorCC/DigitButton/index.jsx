@@ -7,6 +7,7 @@ class DigitButton extends React.Component {
 	render(props) {
 		const { digit, addDigit } = this.props
 
+		// todo заменить инлайн функцию на каррированную функцию
 		return (
 			<StyledKeypadButton onClick={() => addDigit(digit)}>
 				{digit}

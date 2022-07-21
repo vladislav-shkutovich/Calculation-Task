@@ -6,6 +6,7 @@ class Display extends React.Component {
 	render(props) {
 		const { state } = this.props
 
+		// todo убрать классы CSS и сделать только через Styled Components
 		return (
 			<StyledDisplay state={state}>
 				<div className="background-values">

@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 
+// todo убрать лишние пробелы во всех стилях
 export const StyledSettings = styled.div`
 	display: flex;
 	flex-direction: column;
-
 	padding: 30px 50px;
-
 	width: 100%;
 	height: 90%;
-
 	color: ${({ theme }) => theme.colors.black};
 	border: 2px solid ${({ theme }) => theme.colors.black};
 	background-color: ${({ theme }) =>

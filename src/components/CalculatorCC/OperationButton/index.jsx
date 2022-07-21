@@ -11,6 +11,7 @@ class OperationButton extends React.Component {
 	render(props) {
 		const { addOperation, operation } = this.props
 
+		// todo вынесли в Helpers
 		let currentOperation
 		switch (operation) {
 			case '(':
@@ -41,6 +42,7 @@ class OperationButton extends React.Component {
 				currentOperation = ACTIONS.CHOOSE_OPERATION
 		}
 
+		// todo сделать нормально без AdditionalButton, расширить кнопки (растянуть на всю длину)
 		return operation === '+/-' || operation === '%' ? (
 			<StyledAdditionalButton
 				onClick={() =>

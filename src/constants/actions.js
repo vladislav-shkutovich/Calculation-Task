@@ -1,5 +1,6 @@
 export const ACTION_PREFIX = '@/template'
 
+// todo сделать как в документации Redux отдельными экспортами
 export const ACTIONS = {
 	ADD_DIGIT: 'add-digit',
 	ADD_BRACKET: 'add-bracket',

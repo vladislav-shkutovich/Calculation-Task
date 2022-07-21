@@ -9,10 +9,13 @@ export default ({ selectionType }) => {
 	const store = useSelector(store => store)
 	const { i18n, t } = useTranslation()
 
+	// todo использовать useState для этих штук
+	// ! здесь и везде в коде
 	let selectionOptions,
 		selectionDefaultValue,
 		handleSelection
 
+	// todo перенести в pages логику, а здесь оставить только рендер
 	switch (selectionType) {
 		case 'theme':
 			selectionOptions = themes
@@ -39,6 +42,7 @@ export default ({ selectionType }) => {
 			break
 	}
 
+	// todo вынести в отдельную константу, а не каждый раз Object.values()
 	return (
 		<StyledDropdown
 			defaultValue={selectionDefaultValue}

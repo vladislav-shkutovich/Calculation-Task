@@ -14,14 +14,3 @@ export const initialState = {
 	previousOperand: null,
 	operation: null,
 }
-
-/*
-export const initialState = {
-	currentOperand: null,
-	previousOperand: null,
-	operation: null,
-	history: [],
-	historyIsShown: false,
-	selectedTheme: 'dark',
-}
-*/
